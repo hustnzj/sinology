@@ -12119,7 +12119,7 @@ body {
   padding: 20px;
   border-radius: 5px;
   margin: 20px;
-  max-width: 1280px;
+  max-width: 100rem;
   width: 100%;
 }
 
@@ -12129,7 +12129,7 @@ body {
 }
 
 #sidebar {
-  width: 200px;
+  width: 400px;
   max-height: 100vh;
   overflow-y: auto;
   background-color: #f7f7f7;
@@ -12226,7 +12226,19 @@ blockquote {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1, h2 {
+  margin-top: 4rem;
+}
+
+h2 {
+  border-bottom: 1px solid rgb(227, 225, 225);
 }
 
 /*# sourceMappingURL=styles.css.map */
