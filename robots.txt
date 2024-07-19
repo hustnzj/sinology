@@ -1,1 +1,1 @@
-Sitemap: /sinology_learning/sitemap.xml
+Sitemap: /sinology/sitemap.xml
