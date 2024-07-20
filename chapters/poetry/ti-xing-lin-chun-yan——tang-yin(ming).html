@@ -15,11 +15,11 @@
 <meta name="description" content="红杏梢头挂酒旗，绿杨枝上转黄huáng鹂lí。" />
 <meta property="og:description" content="红杏梢头挂酒旗，绿杨枝上转黄huáng鹂lí。" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-07-19T13:45:18+00:00" />
+<meta property="article:published_time" content="2024-07-20T13:53:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="《题杏林春燕》——唐寅（明）" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-19T13:45:18+00:00","datePublished":"2024-07-19T13:45:18+00:00","description":"红杏梢头挂酒旗，绿杨枝上转黄huáng鹂lí。","headline":"《题杏林春燕》——唐寅（明）","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/chapters/poetry/%E3%80%8A%E9%A2%98%E6%9D%8F%E6%9E%97%E6%98%A5%E7%87%95%E3%80%8B%E2%80%94%E2%80%94%E5%94%90%E5%AF%85%EF%BC%88%E6%98%8E%EF%BC%89.html"},"url":"/sinology/chapters/poetry/%E3%80%8A%E9%A2%98%E6%9D%8F%E6%9E%97%E6%98%A5%E7%87%95%E3%80%8B%E2%80%94%E2%80%94%E5%94%90%E5%AF%85%EF%BC%88%E6%98%8E%EF%BC%89.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-20T13:53:00+00:00","datePublished":"2024-07-20T13:53:00+00:00","description":"红杏梢头挂酒旗，绿杨枝上转黄huáng鹂lí。","headline":"《题杏林春燕》——唐寅（明）","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/chapters/poetry/ti-xing-lin-chun-yan%E2%80%94%E2%80%94tang-yin(ming).html"},"url":"/sinology/chapters/poetry/ti-xing-lin-chun-yan%E2%80%94%E2%80%94tang-yin(ming).html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -161,6 +161,12 @@
                 </a>
               </li>
             
+              <li>
+                <a href="/sinology/tocs/shi-shuo-xin-yu.html">
+                  世说新语
+                </a>
+              </li>
+            
           </ul>
         
       </li>
@@ -209,8 +215,7 @@
 </nav>
 
         <h1>《题杏林春燕》——唐寅（明）</h1>
-<div style="font-size: 1.3rem;">
-  <p>红杏梢头挂酒旗，绿杨枝上转<a href="https://baike.baidu.com/item/%E9%BB%84%E9%B9%82%E5%B1%9E/8068455?fromtitle=%E9%BB%84%E9%B9%82&amp;fromid=5150"><ruby>黄<rt>huáng</rt></ruby><ruby>鹂<rt>lí</rt></ruby></a>。</p>
+<p>红杏梢头挂酒旗，绿杨枝上转<a href="https://baike.baidu.com/item/%E9%BB%84%E9%B9%82%E5%B1%9E/8068455?fromtitle=%E9%BB%84%E9%B9%82&amp;fromid=5150"><ruby>黄<rt>huáng</rt></ruby><ruby>鹂<rt>lí</rt></ruby></a>。</p>
 
 <p>鸟声花影留人住，不赏东风也是痴。</p>
 
@@ -226,7 +231,21 @@
 
 <p>唐寅成化二十一年（1485 年）考中苏州府试第一名，进入府学读书。弘治十一年考中应天府乡试第一（解元），入京参加会试。弘治十二年，卷入徐经科场舞弊案，坐罪入狱，贬为浙藩小吏。从此，他丧失科场进取心，游荡江湖，埋没于诗画之间，终成一代名画家。其山水画宗法李唐、刘松年，融会南北画派，笔墨细秀，布局疏朗，风格秀逸清俊；人物画师承唐代传统，色彩艳丽清雅，体态优美，造型准确，亦工写意人物，笔简意赅，饶有意趣；花鸟画长于水墨写意，洒脱秀逸。书法奇峭俊秀，取法赵孟頫。在诗文上，与祝允明、文徵明、徐祯卿并称“吴中四才子”；绘画上与沈周、文徵明、仇英并称“吴门四家”，又称“明四家”。</p>
 
-</div>
+
+<style>
+  .tooltip-inner {
+      font-size: 1.2rem; /* Adjust the size as needed */
+      max-width: 500px;
+  }
+  p {
+    strong {
+      font-size: 1.2rem;
+    }
+    font-size: 1rem;
+  }
+</style>
+
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -310,6 +329,20 @@
       li.appendChild(a);
       toc.appendChild(li);
     });
+
+    document.querySelectorAll('sup>a.footnote').forEach(function (tooltipElement) {
+      var targetId = tooltipElement.getAttribute('href');
+      // Escaping colons and other special characters
+      var escapedId = targetId.replace(/(:|\.|\[|\]|,|=|@)/g, '\\$1');
+      var targetElement = document.querySelector(escapedId);
+      if (targetElement) {
+        var textContent = targetElement.textContent.replace('↩', '').trim();
+        tooltipElement.setAttribute('title', textContent);
+        new bootstrap.Tooltip(tooltipElement);
+      }
+    });
+
+
   });
 
 
@@ -320,7 +353,7 @@
   <!-- Include Bootstrap JS bundle (includes popper.js) -->
   <script src="/sinology/assets/js/bootstrap.bundle.min.js"></script>
   <!-- Include Bootstrap JS (core only) -->
-  <script src="/sinology/assets/js/bootstrap.min.js"></script>
+  <!-- <script src="/sinology/assets/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>

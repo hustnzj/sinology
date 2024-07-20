@@ -15,11 +15,11 @@
 <meta name="description" content="秋来凫fú雁yàn下方塘，系马朝台步夕阳。" />
 <meta property="og:description" content="秋来凫fú雁yàn下方塘，系马朝台步夕阳。" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-07-19T13:45:18+00:00" />
+<meta property="article:published_time" content="2024-07-20T13:53:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="《晚自朝台津至韦隐居郊园》——许浑（唐）" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-19T13:45:18+00:00","datePublished":"2024-07-19T13:45:18+00:00","description":"秋来凫fú雁yàn下方塘，系马朝台步夕阳。","headline":"《晚自朝台津至韦隐居郊园》——许浑（唐）","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/chapters/poetry/%E3%80%8A%E6%99%9A%E8%87%AA%E6%9C%9D%E5%8F%B0%E6%B4%A5%E8%87%B3%E9%9F%A6%E9%9A%90%E5%B1%85%E9%83%8A%E5%9B%AD%E3%80%8B%E2%80%94%E2%80%94%E8%AE%B8%E6%B5%91%EF%BC%88%E5%94%90%EF%BC%89.html"},"url":"/sinology/chapters/poetry/%E3%80%8A%E6%99%9A%E8%87%AA%E6%9C%9D%E5%8F%B0%E6%B4%A5%E8%87%B3%E9%9F%A6%E9%9A%90%E5%B1%85%E9%83%8A%E5%9B%AD%E3%80%8B%E2%80%94%E2%80%94%E8%AE%B8%E6%B5%91%EF%BC%88%E5%94%90%EF%BC%89.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-20T13:53:00+00:00","datePublished":"2024-07-20T13:53:00+00:00","description":"秋来凫fú雁yàn下方塘，系马朝台步夕阳。","headline":"《晚自朝台津至韦隐居郊园》——许浑（唐）","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/chapters/poetry/wan-zi-chao-tai-jin-zhi-wei-yin-ju-jiao-yuan%E2%80%94%E2%80%94xu-hun(tang).html"},"url":"/sinology/chapters/poetry/wan-zi-chao-tai-jin-zhi-wei-yin-ju-jiao-yuan%E2%80%94%E2%80%94xu-hun(tang).html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -161,6 +161,12 @@
                 </a>
               </li>
             
+              <li>
+                <a href="/sinology/tocs/shi-shuo-xin-yu.html">
+                  世说新语
+                </a>
+              </li>
+            
           </ul>
         
       </li>
@@ -209,8 +215,7 @@
 </nav>
 
         <h1>《晚自朝台津至韦隐居郊园》——许浑（唐）</h1>
-<div style="font-size: 1.3rem;">
-  <p>秋来<a href="https://baike.baidu.com/item/%E5%87%AB%E9%9B%81"><ruby>凫<rt>fú</rt></ruby><ruby>雁<rt>yàn</rt></ruby></a>下方塘，系马朝台步夕阳。</p>
+<p>秋来<a href="https://baike.baidu.com/item/%E5%87%AB%E9%9B%81"><ruby>凫<rt>fú</rt></ruby><ruby>雁<rt>yàn</rt></ruby></a>下方塘，系马朝台步夕阳。</p>
 
 <p>村径绕山松叶暗，野门临水稻花香。</p>
 
@@ -228,7 +233,21 @@
 
 <p>作者许浑（约 791～约 858），字用晦（一作仲晦），唐代诗人，润州丹阳（今江苏丹阳）人。他是晚唐最具影响力的诗人之一，一生不作古诗，专攻律体；题材以怀古、田园诗为佳，艺术上以偶对整密、诗律纯熟为特色。因诗中多描写水、雨之景，后人拟之与诗圣杜甫齐名，并以“许浑千首湿，杜甫一生愁”评价之。成年后移家京口（今江苏镇江）丁卯涧，以丁卯名其诗集，后人因称“许丁卯”。许诗误入杜牧集者甚多。代表作有《咸阳城东楼》。</p>
 
-</div>
+
+<style>
+  .tooltip-inner {
+      font-size: 1.2rem; /* Adjust the size as needed */
+      max-width: 500px;
+  }
+  p {
+    strong {
+      font-size: 1.2rem;
+    }
+    font-size: 1rem;
+  }
+</style>
+
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -312,6 +331,20 @@
       li.appendChild(a);
       toc.appendChild(li);
     });
+
+    document.querySelectorAll('sup>a.footnote').forEach(function (tooltipElement) {
+      var targetId = tooltipElement.getAttribute('href');
+      // Escaping colons and other special characters
+      var escapedId = targetId.replace(/(:|\.|\[|\]|,|=|@)/g, '\\$1');
+      var targetElement = document.querySelector(escapedId);
+      if (targetElement) {
+        var textContent = targetElement.textContent.replace('↩', '').trim();
+        tooltipElement.setAttribute('title', textContent);
+        new bootstrap.Tooltip(tooltipElement);
+      }
+    });
+
+
   });
 
 
@@ -322,7 +355,7 @@
   <!-- Include Bootstrap JS bundle (includes popper.js) -->
   <script src="/sinology/assets/js/bootstrap.bundle.min.js"></script>
   <!-- Include Bootstrap JS (core only) -->
-  <script src="/sinology/assets/js/bootstrap.min.js"></script>
+  <!-- <script src="/sinology/assets/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>

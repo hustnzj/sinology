@@ -15,11 +15,11 @@
 <meta name="description" content="6. 第六回 贾宝玉初试云雨情 刘姥姥一进荣国府1 故事梗概 此回己卯、梦稿、蒙府、戚序、舒序、卞藏本有回前诗：“题曰：朝叩富儿门，富儿犹未足。虽无千金酬，嗟彼胜骨肉。” &#8617;" />
 <meta property="og:description" content="6. 第六回 贾宝玉初试云雨情 刘姥姥一进荣国府1 故事梗概 此回己卯、梦稿、蒙府、戚序、舒序、卞藏本有回前诗：“题曰：朝叩富儿门，富儿犹未足。虽无千金酬，嗟彼胜骨肉。” &#8617;" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-07-19T13:45:18+00:00" />
+<meta property="article:published_time" content="2024-07-20T13:53:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Chapter6" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-19T13:45:18+00:00","datePublished":"2024-07-19T13:45:18+00:00","description":"6. 第六回 贾宝玉初试云雨情 刘姥姥一进荣国府1 故事梗概 此回己卯、梦稿、蒙府、戚序、舒序、卞藏本有回前诗：“题曰：朝叩富儿门，富儿犹未足。虽无千金酬，嗟彼胜骨肉。” &#8617;","headline":"Chapter6","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/chapters/dream_of_the_red_chamber/chapter6.html"},"url":"/sinology/chapters/dream_of_the_red_chamber/chapter6.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-20T13:53:00+00:00","datePublished":"2024-07-20T13:53:00+00:00","description":"6. 第六回 贾宝玉初试云雨情 刘姥姥一进荣国府1 故事梗概 此回己卯、梦稿、蒙府、戚序、舒序、卞藏本有回前诗：“题曰：朝叩富儿门，富儿犹未足。虽无千金酬，嗟彼胜骨肉。” &#8617;","headline":"Chapter6","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/chapters/dream_of_the_red_chamber/chapter6.html"},"url":"/sinology/chapters/dream_of_the_red_chamber/chapter6.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -161,6 +161,12 @@
                 </a>
               </li>
             
+              <li>
+                <a href="/sinology/tocs/shi-shuo-xin-yu.html">
+                  世说新语
+                </a>
+              </li>
+            
           </ul>
         
       </li>
@@ -209,8 +215,7 @@
 </nav>
 
         <h1>Chapter6</h1>
-<div style="font-size: 1.3rem;">
-  <h1 id="6-第六回-贾宝玉初试云雨情-刘姥姥一进荣国府">6. 第六回 贾宝玉初试云雨情 刘姥姥一进荣国府<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></h1>
+<h1 id="6-第六回-贾宝玉初试云雨情-刘姥姥一进荣国府">6. 第六回 贾宝玉初试云雨情 刘姥姥一进荣国府<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></h1>
 <h2 id="故事梗概">故事梗概</h2>
 
 <p>这一回主要包含两个情节：</p>
@@ -436,7 +441,21 @@
   </ol>
 </div>
 
-</div>
+
+<style>
+  .tooltip-inner {
+      font-size: 1.2rem; /* Adjust the size as needed */
+      max-width: 500px;
+  }
+  p {
+    strong {
+      font-size: 1.2rem;
+    }
+    font-size: 1rem;
+  }
+</style>
+
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -520,6 +539,20 @@
       li.appendChild(a);
       toc.appendChild(li);
     });
+
+    document.querySelectorAll('sup>a.footnote').forEach(function (tooltipElement) {
+      var targetId = tooltipElement.getAttribute('href');
+      // Escaping colons and other special characters
+      var escapedId = targetId.replace(/(:|\.|\[|\]|,|=|@)/g, '\\$1');
+      var targetElement = document.querySelector(escapedId);
+      if (targetElement) {
+        var textContent = targetElement.textContent.replace('↩', '').trim();
+        tooltipElement.setAttribute('title', textContent);
+        new bootstrap.Tooltip(tooltipElement);
+      }
+    });
+
+
   });
 
 
@@ -530,7 +563,7 @@
   <!-- Include Bootstrap JS bundle (includes popper.js) -->
   <script src="/sinology/assets/js/bootstrap.bundle.min.js"></script>
   <!-- Include Bootstrap JS (core only) -->
-  <script src="/sinology/assets/js/bootstrap.min.js"></script>
+  <!-- <script src="/sinology/assets/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>
