@@ -12108,19 +12108,19 @@ body {
   flex-direction: column;
 }
 
-a {
-  text-decoration: none;
-}
 a:hover {
   color: #007bff;
   text-decoration: underline;
 }
-
-p {
-  font-size: 1rem;
+a {
+  text-decoration: none;
 }
+
 p strong {
   font-size: 1.2rem;
+}
+p {
+  font-size: 1rem;
 }
 
 blockquote {
