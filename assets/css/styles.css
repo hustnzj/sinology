@@ -12108,6 +12108,46 @@ body {
   flex-direction: column;
 }
 
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1rem;
+}
+p strong {
+  font-size: 1.2rem;
+}
+
+blockquote {
+  border-left: 4px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+h1,
+h2 {
+  margin-top: 4rem;
+}
+
+h2 {
+  border-bottom: 1px solid rgb(227, 225, 225);
+}
+
 .outer-container {
   display: flex;
   justify-content: center;
@@ -12129,7 +12169,7 @@ body {
 }
 
 #sidebar {
-  width: 400px;
+  width: 20%;
   max-height: 100vh;
   overflow-y: auto;
   background-color: #f7f7f7;
@@ -12188,6 +12228,7 @@ nav ul li ul {
   border: 1px solid #ccc;
   padding: 0;
   list-style: none;
+  left: 0;
 }
 nav ul li ul li {
   width: 100%;
@@ -12200,6 +12241,10 @@ nav ul li ul li a {
 nav ul li ul li:hover {
   background-color: #f0f0f0;
 }
+nav ul li ul li ul {
+  left: 100%;
+  top: 0;
+}
 
 .breadcrumb {
   background-color: transparent;
@@ -12210,35 +12255,9 @@ nav ul li ul li:hover {
   content: ">";
 }
 
-a {
-  text-decoration: none;
-}
-a:hover {
-  color: #007bff;
-  text-decoration: underline;
-}
-
-blockquote {
-  border-left: 4px solid #ccc;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #f9f9f9;
-}
-
-img {
-  width: 100%;
-}
-
-h1 {
-  text-align: center;
-}
-
-h1, h2 {
-  margin-top: 4rem;
-}
-
-h2 {
-  border-bottom: 1px solid rgb(227, 225, 225);
+.tooltip-inner {
+  font-size: 1.2rem; /* Adjust the size as needed */
+  max-width: 500px;
 }
 
 /*# sourceMappingURL=styles.css.map */
