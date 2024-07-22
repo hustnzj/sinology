@@ -11,11 +11,11 @@ def build_breadcrumbs(menu, parent_breadcrumbs=None):
 
         if 'submenu' in item:
             breadcrumbs_map.update(build_breadcrumbs(item['submenu'], current_breadcrumbs))
-        else:
-            if 'contents' in item['url']:
-                key = item['url'].strip('/').split('/')[1]
-                if key:
-                    breadcrumbs_map[key] = current_breadcrumbs
+
+        if 'contents' in item['url']:
+            key = item['url'].strip('/').split('/')[-2]
+            if key:
+                breadcrumbs_map[key] = current_breadcrumbs
 
     return breadcrumbs_map
 

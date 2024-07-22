@@ -12108,6 +12108,10 @@ body {
   flex-direction: column;
 }
 
+ul {
+  list-style: none;
+}
+
 a:hover {
   color: #007bff;
   text-decoration: underline;
