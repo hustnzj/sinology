@@ -7,7 +7,7 @@ def build_breadcrumbs(menu, parent_breadcrumbs=None):
     breadcrumbs_map = {}
 
     for item in menu:
-        current_breadcrumbs = parent_breadcrumbs + [{'name': item['name'], 'url': item['url']}]
+        current_breadcrumbs = parent_breadcrumbs + [{'title': item['title'], 'url': item['url']}]
 
         if 'submenu' in item:
             breadcrumbs_map.update(build_breadcrumbs(item['submenu'], current_breadcrumbs))
@@ -20,7 +20,7 @@ def build_breadcrumbs(menu, parent_breadcrumbs=None):
     return breadcrumbs_map
 
 def main():
-    with open('_data/navigation_new.yaml', 'r', encoding='utf-8') as file:
+    with open('_data/navigation.yaml', 'r', encoding='utf-8') as file:
         navigation_data = yaml.safe_load(file)
 
     breadcrumbs = build_breadcrumbs(navigation_data)
