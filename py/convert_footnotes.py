@@ -35,9 +35,12 @@ def convert_to_footnotes(text):
 
 def main():
     input_text = pyperclip.paste()
-    converted_text = convert_to_footnotes(input_text)
-    pyperclip.copy(converted_text)
-    print("转换后的文本已复制到剪贴板。")
+    if input_text:
+        converted_text = convert_to_footnotes(input_text)
+        pyperclip.copy(converted_text)
+        print("转换后的文本已复制到剪贴板。")
+    else:
+        print("您还没有复制任何内容！请复制后再运行本脚本！")
 
 if __name__ == "__main__":
     main()
