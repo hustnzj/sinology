@@ -10,7 +10,7 @@ def convert_to_footnotes(text):
     备注：
     """
     # 找到已有的脚注编号
-    existing_footnote_pattern = r'\[\^(\d+)\]'
+    existing_footnote_pattern = r'\[\^(\d+)\](?!:)'
     existing_numbers = re.findall(existing_footnote_pattern, text)
     existing_numbers = list(map(int, existing_numbers))
     max_existing_number = max(existing_numbers) if existing_numbers else 0
