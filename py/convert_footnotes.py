@@ -31,6 +31,10 @@ def convert_to_footnotes(text):
 
     updated_text = re.sub(pattern, replace_tag, text)
 
+        # Append footnotes at the end
+    for i, match in enumerate(matches, start=max_existing_number + 1):
+        updated_text += f"\n## 脚注\n[^{i}]: {match}"
+
     return updated_text
 
 def main():
