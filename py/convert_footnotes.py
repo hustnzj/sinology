@@ -29,11 +29,11 @@ def convert_to_footnotes(text):
         content = match.group(1)
         return f"{content}{footnotes[content]}"
 
-    updated_text = re.sub(pattern, replace_tag, text)
+    updated_text = re.sub(pattern, replace_tag, text) + "\n## 脚注"
 
         # Append footnotes at the end
     for i, match in enumerate(matches, start=max_existing_number + 1):
-        updated_text += f"\n## 脚注\n[^{i}]: {match}"
+        updated_text += f"\n[^{i}]: {match}"
 
     return updated_text
 
