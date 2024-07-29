@@ -469,6 +469,23 @@
                         
                       </li>
                     
+                      <li>
+                        <a href="/sinology/contents/sinology/si-ci-ge-fu/research-monograph/toc.html">
+                          研究专著
+                        </a>
+                        
+                          <ul>
+                            
+                              <li>
+                                <a href="/sinology/contents/sinology/si-ci-ge-fu/research-monograph/newNotesOnThreeHundredTangPoems/toc.html">
+                                  唐诗三百首新注
+                                </a>
+                              </li>
+                            
+                          </ul>
+                        
+                      </li>
+                    
                   </ul>
                 
               </li>
@@ -698,7 +715,7 @@ kinds of large herbaceous flowering plants in the genus Musa.</p>
 
         const a = document.createElement("a");
         a.href = `#${id}`;
-        a.textContent = text;
+        a.textContent = text.replace(/\d+/g, '');
         a.dataset.level = heading.tagName;
 
         if (heading.tagName === "H2") {
