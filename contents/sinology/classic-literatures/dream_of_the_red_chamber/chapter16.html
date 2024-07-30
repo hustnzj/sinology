@@ -15,11 +15,11 @@
 <meta name="description" content="第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路" />
 <meta property="og:description" content="第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-07-29T07:57:23+00:00" />
+<meta property="article:published_time" content="2024-07-30T04:51:55+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Chapter16" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-29T07:57:23+00:00","datePublished":"2024-07-29T07:57:23+00:00","description":"第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路","headline":"Chapter16","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/classic-literatures/dream_of_the_red_chamber/chapter16.html"},"url":"/sinology/contents/sinology/classic-literatures/dream_of_the_red_chamber/chapter16.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-30T04:51:55+00:00","datePublished":"2024-07-30T04:51:55+00:00","description":"第十六回 贾元春才选凤藻宫 秦鲸卿夭逝黄泉路","headline":"Chapter16","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/classic-literatures/dream_of_the_red_chamber/chapter16.html"},"url":"/sinology/contents/sinology/classic-literatures/dream_of_the_red_chamber/chapter16.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -33,25 +33,25 @@
         </nav>
       </div>
       <div class="content">
-        <nav>
+        <nav id="menu">
   <ul>
     
       <li>
-        <a href="/sinology/"  style="padding-left: 0;">
+        <a href="/sinology/" ">
           主页
         </a>
         
       </li>
     
       <li>
-        <a href="/sinology/about.html"  style="padding-left: 0;">
+        <a href="/sinology/about.html" ">
           关于
         </a>
         
       </li>
     
       <li>
-        <a href="/sinology/contents/sinology/toc.html"  style="padding-left: 0;">
+        <a href="/sinology/contents/sinology/toc.html" ">
           国学
         </a>
         
@@ -505,7 +505,7 @@
       </li>
     
       <li>
-        <a href="/sinology/children-education.html"  style="padding-left: 0;">
+        <a href="/sinology/children-education.html" ">
           子女教育
         </a>
         
@@ -599,63 +599,63 @@
       </li>
     
       <li>
-        <a href="/sinology/programming.html"  style="padding-left: 0;">
+        <a href="/sinology/programming.html" ">
           编程
         </a>
         
       </li>
     
       <li>
-        <a href="/sinology/law.html"  style="padding-left: 0;">
+        <a href="/sinology/law.html" ">
           法律
         </a>
         
       </li>
     
       <li>
-        <a href="/sinology/science.html"  style="padding-left: 0;">
+        <a href="/sinology/science.html" ">
           自然科学
         </a>
         
       </li>
     
       <li>
-        <a href="/sinology/economy.html"  style="padding-left: 0;">
+        <a href="/sinology/economy.html" ">
           经济
         </a>
         
       </li>
     
       <li>
-        <a href="/sinology/philosophy.html"  style="padding-left: 0;">
+        <a href="/sinology/philosophy.html" ">
           哲学
         </a>
         
       </li>
     
       <li>
-        <a href="/sinology/english.html"  style="padding-left: 0;">
+        <a href="/sinology/english.html" ">
           English
         </a>
         
       </li>
     
       <li>
-        <a href="/sinology/world-literature.html"  style="padding-left: 0;">
+        <a href="/sinology/world-literature.html" ">
           世界文学
         </a>
         
       </li>
     
       <li>
-        <a href="/sinology/sports.html"  style="padding-left: 0;">
+        <a href="/sinology/sports.html" ">
           体育
         </a>
         
       </li>
     
       <li>
-        <a href="/sinology/news.html"  style="padding-left: 0;">
+        <a href="/sinology/news.html" ">
           新闻
         </a>
         
@@ -665,7 +665,7 @@
 </nav>
 
         
-  <nav aria-label="breadcrumb">
+  <nav aria-label="breadcrumb" id="breadcrumbs">
     <ol class="breadcrumb">
       
       <li class="breadcrumb-item"><a href="/sinology/contents/sinology/toc.html">国学</a></li>
@@ -1031,84 +1031,122 @@
     document.addEventListener("DOMContentLoaded", function () {
       // 页面上的 toc 目录
       const toc = document.querySelector("#toc ul");
-      const headings = document.querySelectorAll("h2, h3, h4");
+      const headings = document.querySelectorAll("h1, h2, h3, h4");
 
       headings.forEach((heading, index) => {
         const text = heading.textContent.trim();
+        // \w 表示匹配字母、数字、下划线，相当于 [A-Za-z0-9_] 。
+        // \s 表示匹配任何空白字符，包括空格、制表符、换页符等，相当于 [ \f\n\r\t\v] 。
         const safeText = text.replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').toLowerCase();
         const id = `heading-${safeText}-${index}`;
         heading.id = id;
 
         const li = document.createElement("li");
-        li.style.display = heading.tagName === "H2" ? "flex" : "none";
+        // 设置各级 li 容器 的初始值
+        li.style.display = heading.tagName === "H1" ? "flex" : "none";
         li.style.alignItems = "center";
-        li.style.marginLeft = heading.tagName === "H3" ? "50px" : "0px";
-        li.style.marginLeft = heading.tagName === "H4" ? "100px" : li.style.marginLeft;
+        li.style.marginLeft = heading.tagName === "H2" ? "1rem" : "0";
+        li.style.marginLeft = heading.tagName === "H3" ? "2rem" : li.style.marginLeft;
+        li.style.marginLeft = heading.tagName === "H4" ? "3rem" : li.style.marginLeft;
 
         const a = document.createElement("a");
         a.href = `#${id}`;
         a.textContent = text.replace(/\d+/g, '');
         a.dataset.level = heading.tagName;
 
-        if (heading.tagName === "H2") {
-          let sibling = heading.nextElementSibling;
-          let hasH3 = false;
+        const nextLevelHeadingTagName = `H${parseInt(heading.tagName.replace('H', '')) + 1}`;
 
-          while (sibling && sibling.tagName !== "H2") {
-            if (sibling.tagName === "H3") {
-              hasH3 = true;
-              break;
+        const toggle = document.createElement("span");
+        toggle.style.width = "2rem";
+
+        if (hasNextLevelHeading(heading, nextLevelHeadingTagName)) {
+          toggle.textContent = "➡️";
+          toggle.style.cursor = "pointer";
+
+          toggle.isOpen = false;
+
+          toggle.addEventListener("mouseover", function () {
+            if (this.textContent.trim() === "➡️") {
+              this.textContent = "⬇️";
             }
-            sibling = sibling.nextElementSibling;
-          }
+          });
 
-          const toggle = document.createElement("span");
-          toggle.style.width = "2rem";
+          toggle.addEventListener("mouseout", function () {
+            if (this.textContent.trim() === "⬇️" && !this.isOpen) {
+              this.textContent = "➡️";
+            }
+          });
 
-          if (hasH3) {
-            toggle.textContent = "➡️";
-            toggle.style.cursor = "pointer";
+          toggle.addEventListener("click", function () {
+            this.isOpen = !this.isOpen;
+            if (this.isOpen) {
+              showNextLevelHeadings(heading, nextLevelHeadingTagName);
+            } else {
+              hideAllSubHeadings(heading, nextLevelHeadingTagName);
+            }
+            this.textContent = this.isOpen ? "⬇️" : "➡️";
+          });
 
-            let isOpen = false;
-
-            toggle.addEventListener("mouseover", function () {
-              if (this.textContent.trim() === "➡️") {
-                this.textContent = "⬇️";
-              }
-            });
-
-            toggle.addEventListener("mouseout", function () {
-              if (this.textContent.trim() === "⬇️" && !isOpen) {
-                this.textContent = "➡️";
-              }
-            });
-
-            toggle.addEventListener("click", function () {
-              const nextLevel = `H3`;
-              let sibling = heading.nextElementSibling;
-              isOpen = !isOpen;
-
-              while (sibling && sibling.tagName !== "H2") {
-                if (sibling.tagName === nextLevel) {
-                  const siblingLi = toc.querySelector(`a[href="#${sibling.id}"]`).parentElement;
-                  siblingLi.style.display = isOpen ? "flex" : "none";
-                }
-                sibling = sibling.nextElementSibling;
-              }
-
-              this.textContent = isOpen ? "⬇️" : "➡️";
-            });
-
-            li.appendChild(toggle);
-          } else {
-            const placeholder = document.createElement("span");
-            placeholder.style.width = "2rem";
-            li.appendChild(placeholder);
-          }
         }
-
+        li.appendChild(toggle);
         li.appendChild(a);
         toc.appendChild(li);
+      });
+
+      function hasNextLevelHeading(heading, nextLevelHeadingTagName) {
+        let sibling = heading.nextElementSibling;
+        while (sibling && sibling.tagName !== heading.tagName) {
+          if (sibling.tagName === nextLevelHeadingTagName) {
+            return true;
+          }
+          sibling = sibling.nextElementSibling;
+        }
+        return false;
+      }
+
+      function showNextLevelHeadings(heading, nextLevelHeadingTagName) {
+        let sibling = heading.nextElementSibling;
+        while (sibling && sibling.tagName !== heading.tagName) {
+          if (sibling.tagName === nextLevelHeadingTagName) {
+            const siblingLi = toc.querySelector(`a[href="#${sibling.id}"]`).parentElement;
+            siblingLi.style.display = "flex";
+          }
+          sibling = sibling.nextElementSibling;
+        }
+      }
+
+      function hideAllSubHeadings(heading, nextLevelHeadingTagName) {
+        let sibling = heading.nextElementSibling;
+        while (sibling && sibling.tagName !== heading.tagName) {
+          if (sibling.tagName === nextLevelHeadingTagName) {
+            const siblingLi = toc.querySelector(`a[href="#${sibling.id}"]`).parentElement;
+            siblingLi.style.display = "none";
+            const siblingToggle = siblingLi.querySelector("span");
+            if (siblingToggle && siblingToggle.textContent === "⬇️") {
+              siblingToggle.textContent = "➡️";
+              siblingToggle.isOpen = false;
+              hideAllSubHeadings(sibling, `H${parseInt(nextLevelHeadingTagName.replace('H', '')) + 1}`);
+            }
+          }
+          sibling = sibling.nextElementSibling;
+        }
+      }
+
+      // 监听所有 TOC 超链接的点击事件
+      const OFFSET = 142; // 需要调整的位置偏移量
+      document.querySelectorAll('#toc a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - OFFSET,
+              behavior: 'smooth'
+            });
+          }
+        });
       });
 
       // 页面上的脚注显示提示框
@@ -1123,11 +1161,7 @@
           new bootstrap.Tooltip(tooltipElement);
         }
       });
-
-
     });
-
-
   </script>
 </body>
 

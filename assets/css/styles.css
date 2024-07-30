@@ -12160,10 +12160,9 @@ h2 {
 .container {
   display: flex;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 0 20px 20px 0;
   border-radius: 5px;
-  margin: 20px;
-  max-width: 100rem;
+  margin: 0 20px 20px;
   width: 100%;
 }
 
@@ -12173,19 +12172,19 @@ h2 {
 }
 
 #sidebar {
-  width: 20%;
   max-height: 100vh;
   overflow-y: auto;
   background-color: #f7f7f7;
   border-right: 1px solid #ccc;
-  padding: 10px;
+  padding: 10px 30px 10px 10px;
   position: sticky;
-  top: 60px;
+  top: 0px;
 }
 
 #toc ul {
   list-style: none;
   padding: 0;
+  margin: 0; /* 确保 ul 元素没有外边距 */
 }
 #toc li {
   margin: 5px 0;
@@ -12193,6 +12192,7 @@ h2 {
   align-items: center;
 }
 #toc a {
+  font-size: 1rem;
   text-decoration: none;
   color: #333;
   padding: 0;
@@ -12201,31 +12201,38 @@ h2 {
   text-decoration: underline;
 }
 #toc span {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-right: 5px;
   cursor: pointer;
 }
 
-nav ul {
+nav#menu {
+  position: sticky;
+  top: 0;
+  background-color: #f7f7f7;
+  z-index: 12;
+}
+nav#menu ul {
   list-style: none;
   padding: 0;
 }
-nav ul li {
+nav#menu ul li {
   position: relative;
   display: inline-block;
   margin-right: 20px;
 }
-nav ul li:hover > ul {
+nav#menu ul li:hover > ul {
   display: block;
   z-index: 10;
 }
-nav ul li a {
+nav#menu ul li a {
   text-decoration: none;
   padding: 10px;
   display: block;
   font-size: 1.2rem;
+  font-weight: bold;
 }
-nav ul li ul {
+nav#menu ul li ul {
   display: none;
   position: absolute;
   background-color: #fff;
@@ -12234,25 +12241,32 @@ nav ul li ul {
   list-style: none;
   left: 0;
 }
-nav ul li ul li {
+nav#menu ul li ul li {
   width: 100%;
   margin-right: 0;
 }
-nav ul li ul li a {
+nav#menu ul li ul li a {
   padding: 10px 15px;
   white-space: nowrap;
 }
-nav ul li ul li:hover {
+nav#menu ul li ul li:hover {
   background-color: #f0f0f0;
 }
-nav ul li ul li ul {
+nav#menu ul li ul li ul {
   left: 100%;
   top: 0;
 }
 
+#breadcrumbs {
+  position: sticky;
+  top: 85px;
+  background-color: #f7f7f7;
+  z-index: 1;
+}
+
 .breadcrumb {
   background-color: transparent;
-  padding: 0;
+  padding: 10px;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
