@@ -15,11 +15,11 @@
 <meta name="description" content="原文 帝曰：“来，禹！汝亦昌言。”禹拜曰：“都！帝，予何言？予思日孜孜。”皋陶曰：“吁！如何？”禹曰：“洪水滔天，浩浩怀山襄陵，下民昏垫。予乘四载，随山刊木，暨益奏庶鲜食。予决九川，距四海，浚畎浍距川；暨稷播，奏庶艰食鲜食。懋迁有无，化居。烝民乃粒，万邦作乂。”皋陶曰：“俞！师汝昌言。”" />
 <meta property="og:description" content="原文 帝曰：“来，禹！汝亦昌言。”禹拜曰：“都！帝，予何言？予思日孜孜。”皋陶曰：“吁！如何？”禹曰：“洪水滔天，浩浩怀山襄陵，下民昏垫。予乘四载，随山刊木，暨益奏庶鲜食。予决九川，距四海，浚畎浍距川；暨稷播，奏庶艰食鲜食。懋迁有无，化居。烝民乃粒，万邦作乂。”皋陶曰：“俞！师汝昌言。”" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-07-31T08:57:38+00:00" />
+<meta property="article:published_time" content="2024-07-31T13:18:54+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="《益稷》" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-31T08:57:38+00:00","datePublished":"2024-07-31T08:57:38+00:00","description":"原文 帝曰：“来，禹！汝亦昌言。”禹拜曰：“都！帝，予何言？予思日孜孜。”皋陶曰：“吁！如何？”禹曰：“洪水滔天，浩浩怀山襄陵，下民昏垫。予乘四载，随山刊木，暨益奏庶鲜食。予决九川，距四海，浚畎浍距川；暨稷播，奏庶艰食鲜食。懋迁有无，化居。烝民乃粒，万邦作乂。”皋陶曰：“俞！师汝昌言。”","headline":"《益稷》","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/si-shu-wu-jing/shang-shu/yu-shu/yi-ji.html"},"url":"/sinology/contents/sinology/si-shu-wu-jing/shang-shu/yu-shu/yi-ji.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-31T13:18:54+00:00","datePublished":"2024-07-31T13:18:54+00:00","description":"原文 帝曰：“来，禹！汝亦昌言。”禹拜曰：“都！帝，予何言？予思日孜孜。”皋陶曰：“吁！如何？”禹曰：“洪水滔天，浩浩怀山襄陵，下民昏垫。予乘四载，随山刊木，暨益奏庶鲜食。予决九川，距四海，浚畎浍距川；暨稷播，奏庶艰食鲜食。懋迁有无，化居。烝民乃粒，万邦作乂。”皋陶曰：“俞！师汝昌言。”","headline":"《益稷》","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/si-shu-wu-jing/shang-shu/yu-shu/yi-ji.html"},"url":"/sinology/contents/sinology/si-shu-wu-jing/shang-shu/yu-shu/yi-ji.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -683,7 +683,7 @@
 
         <h1>《益稷》</h1>
 
-  <h2 id="原文">原文</h2>
+<h2 id="原文">原文</h2>
 <ol>
   <li>
     <p>帝曰：“来，禹！汝亦昌言。”禹拜曰：“都！帝，予何言？予思日孜孜。”皋陶曰：“吁！如何？”禹曰：“洪水滔天，浩浩怀山襄陵，下民昏垫。予乘四载，随山刊木，暨益奏庶鲜食。予决九川，距四海，浚畎浍距川；暨稷播，奏庶艰食鲜食。懋迁有无，化居。烝民乃粒，万邦作乂。”皋陶曰：“俞！师汝昌言。”</p>
@@ -804,6 +804,33 @@
 
 
 <style>
+  {
+    % if page.zhu-yin-poetry %
+  }
+
+  ruby {
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+  }
+
+  rt {
+    display: block;
+    width: 25px;
+    text-align: center;
+    margin-top: -2rem;
+  }
+
+  ruby+span.comma,
+  ruby+span.period {
+    position: relative;
+    top: 1.2em;
+    right: 0.2rem;
+  }
+
+    {
+    % endif %
+  }
 
   a:hover {
     color: rgb(170, 111, 2);
@@ -840,28 +867,38 @@
     // 遍历.hidden-element 元素
     for (let i = 0; i < hiddenElements.length; i++) {
       // 获取当前.hidden-element 元素的前一个兄弟节点，如果是 <p> 元素则进行处理
-      let prevSibling = hiddenElements[i].previousSibling.previousSibling;
-      if (prevSibling && prevSibling.tagName === 'P') {
-        let text = prevSibling.innerHTML;
+      let prevElementSibling = hiddenElements[i].previousElementSibling;
+      if (prevElementSibling && prevElementSibling.tagName === 'P') {
+        let text = prevElementSibling.innerHTML;
         let parts = text.split('。');
-        let parent = prevSibling.parentNode;
-        let preElementSibling = prevSibling.previousSibling.previousSibling;
+        let parent = prevElementSibling.parentNode;
+        let preElementSibling = prevElementSibling.previousElementSibling;
         if (preElementSibling && preElementSibling.tagName === 'H3') {
           preElementSibling.className = 'text-center';
         }
         parts.forEach(part => {
-          if (part.trim()!== '') {
-            let newP = document.createElement('p');
-            newP.className = 'text-center';
-            if (!part.endsWith('？')) {
-              newP.innerHTML = part + '。';
-            } else {
-              newP.innerHTML = part;
+          if (part.trim() !== '') {
+            let subParts = [part];
+            // 如果 part 中含有 '？' 且 '？' 前有 '，' 且 '？' 后有 '，'
+            if (part.includes('？') && part.match(/，.*？.*，/)) {
+              subParts = part.split('？'); // 在 '？' 处分割 part 变量
+              subParts[0] = subParts[0] + '？'; // 保持 '？' 在第一个子部分的末尾
             }
-            parent.insertBefore(newP, prevSibling);
+            subParts.forEach(subPart => {
+              if (subPart.trim() !== '') {
+                let newP = document.createElement('p');
+                newP.className = 'text-center';
+                if (!subPart.endsWith('？') && !subPart.endsWith('。')) {
+                  newP.innerHTML = subPart + '。';
+                } else {
+                  newP.innerHTML = subPart;
+                }
+                parent.insertBefore(newP, prevElementSibling);
+              }
+            });
           }
         });
-        parent.removeChild(prevSibling);
+        parent.removeChild(prevElementSibling);
       }
     }
 

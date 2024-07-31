@@ -15,11 +15,11 @@
 <meta name="description" content="奇才巧缀《千字文》" />
 <meta property="og:description" content="奇才巧缀《千字文》" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-07-31T08:57:38+00:00" />
+<meta property="article:published_time" content="2024-07-31T13:18:54+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="前言" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-31T08:57:38+00:00","datePublished":"2024-07-31T08:57:38+00:00","description":"奇才巧缀《千字文》","headline":"前言","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/guo-xue-qi-meng/qian-zi-wen/introduction.html"},"url":"/sinology/contents/sinology/guo-xue-qi-meng/qian-zi-wen/introduction.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-31T13:18:54+00:00","datePublished":"2024-07-31T13:18:54+00:00","description":"奇才巧缀《千字文》","headline":"前言","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/guo-xue-qi-meng/qian-zi-wen/introduction.html"},"url":"/sinology/contents/sinology/guo-xue-qi-meng/qian-zi-wen/introduction.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -681,7 +681,7 @@
 
         <h1>前言</h1>
 
-  <h2 id="奇才巧缀千字文">奇才巧缀《千字文》</h2>
+<h2 id="奇才巧缀千字文">奇才巧缀《千字文》</h2>
 
 <p>《千字文》出自南朝<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>才子周兴嗣手。周兴嗣（？—521），字思纂，南梁<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>陈郡项（今河南项城）人。祖上曾任汉太子老师，家学素养厚重，本人更是以文学知名当时，深得梁武帝萧衍赏识，授官员外散骑侍郎<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>，奉命编纂国史，著有文集百余卷。</p>
 
@@ -758,6 +758,33 @@
 
 
 <style>
+  {
+    % if page.zhu-yin-poetry %
+  }
+
+  ruby {
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+  }
+
+  rt {
+    display: block;
+    width: 25px;
+    text-align: center;
+    margin-top: -2rem;
+  }
+
+  ruby+span.comma,
+  ruby+span.period {
+    position: relative;
+    top: 1.2em;
+    right: 0.2rem;
+  }
+
+    {
+    % endif %
+  }
 
   a:hover {
     color: rgb(170, 111, 2);
@@ -794,28 +821,38 @@
     // 遍历.hidden-element 元素
     for (let i = 0; i < hiddenElements.length; i++) {
       // 获取当前.hidden-element 元素的前一个兄弟节点，如果是 <p> 元素则进行处理
-      let prevSibling = hiddenElements[i].previousSibling.previousSibling;
-      if (prevSibling && prevSibling.tagName === 'P') {
-        let text = prevSibling.innerHTML;
+      let prevElementSibling = hiddenElements[i].previousElementSibling;
+      if (prevElementSibling && prevElementSibling.tagName === 'P') {
+        let text = prevElementSibling.innerHTML;
         let parts = text.split('。');
-        let parent = prevSibling.parentNode;
-        let preElementSibling = prevSibling.previousSibling.previousSibling;
+        let parent = prevElementSibling.parentNode;
+        let preElementSibling = prevElementSibling.previousElementSibling;
         if (preElementSibling && preElementSibling.tagName === 'H3') {
           preElementSibling.className = 'text-center';
         }
         parts.forEach(part => {
-          if (part.trim()!== '') {
-            let newP = document.createElement('p');
-            newP.className = 'text-center';
-            if (!part.endsWith('？')) {
-              newP.innerHTML = part + '。';
-            } else {
-              newP.innerHTML = part;
+          if (part.trim() !== '') {
+            let subParts = [part];
+            // 如果 part 中含有 '？' 且 '？' 前有 '，' 且 '？' 后有 '，'
+            if (part.includes('？') && part.match(/，.*？.*，/)) {
+              subParts = part.split('？'); // 在 '？' 处分割 part 变量
+              subParts[0] = subParts[0] + '？'; // 保持 '？' 在第一个子部分的末尾
             }
-            parent.insertBefore(newP, prevSibling);
+            subParts.forEach(subPart => {
+              if (subPart.trim() !== '') {
+                let newP = document.createElement('p');
+                newP.className = 'text-center';
+                if (!subPart.endsWith('？') && !subPart.endsWith('。')) {
+                  newP.innerHTML = subPart + '。';
+                } else {
+                  newP.innerHTML = subPart;
+                }
+                parent.insertBefore(newP, prevElementSibling);
+              }
+            });
           }
         });
-        parent.removeChild(prevSibling);
+        parent.removeChild(prevElementSibling);
       }
     }
 

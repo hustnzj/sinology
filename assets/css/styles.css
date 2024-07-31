@@ -12278,4 +12278,8 @@ nav#menu ul li ul li ul {
   max-width: 500px;
 }
 
+.dashed-line {
+  border: 1px dashed #000;
+}
+
 /*# sourceMappingURL=styles.css.map */
