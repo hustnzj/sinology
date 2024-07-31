@@ -783,9 +783,9 @@
         }
       }
 
-      // 监听所有 TOC 超链接的点击事件
+      // 监听所有超链接的点击事件
       const OFFSET = 142; // 需要调整的位置偏移量
-      document.querySelectorAll('#toc a').forEach(anchor => {
+      document.querySelectorAll('a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
 
