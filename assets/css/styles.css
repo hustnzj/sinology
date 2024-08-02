@@ -12152,8 +12152,13 @@ h1 {
 }
 
 h1,
-h2 {
-  margin-top: 4rem;
+h2, h3 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  text-align: center;
 }
 
 h2 {
