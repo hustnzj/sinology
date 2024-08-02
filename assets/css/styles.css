@@ -12295,4 +12295,33 @@ nav#menu ul li ul li ul {
   border: 1px dashed #000;
 }
 
+span.black-dot {
+  position: relative;
+}
+span.black-dot::after {
+  content: "•";
+  position: absolute;
+  bottom: -70%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  color: black;
+}
+
+:has(> .poetry_title), :has(> .poetry_body) {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center; /* 确保文本居中 */
+}
+
+.poetry_title, .poetry_body {
+  display: inline-block;
+}
+
+.poetry_title {
+  margin-bottom: 1rem;
+}
+
 /*# sourceMappingURL=styles.css.map */

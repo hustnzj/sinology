@@ -738,7 +738,7 @@ red, purple, or brown when ripe.</p>
     document.addEventListener("DOMContentLoaded", function () {
       // 页面上的 toc 目录
       const toc = document.querySelector("#toc ul");
-      const headings = document.querySelectorAll("h1, h2, h3, h4");
+      const headings = document.querySelectorAll("h1, h2, h3, h4, h5");
 
       headings.forEach((heading, index) => {
         const text = heading.textContent.trim();
@@ -755,6 +755,7 @@ red, purple, or brown when ripe.</p>
         li.style.marginLeft = heading.tagName === "H2" ? "1rem" : "0";
         li.style.marginLeft = heading.tagName === "H3" ? "2rem" : li.style.marginLeft;
         li.style.marginLeft = heading.tagName === "H4" ? "3rem" : li.style.marginLeft;
+        li.style.marginLeft = heading.tagName === "H5" ? "4rem" : li.style.marginLeft;
 
         const a = document.createElement("a");
         a.href = `#${id}`;
