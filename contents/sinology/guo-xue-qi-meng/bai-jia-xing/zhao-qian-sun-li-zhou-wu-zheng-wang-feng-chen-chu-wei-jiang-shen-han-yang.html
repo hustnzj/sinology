@@ -15,11 +15,11 @@
 <meta name="description" content="赵：嬴姓祖先伯益1的后代名叫造父2，造父为周穆王3驾车，在穆王出巡及征伐中屡屡建功，穆王于是把赵城封赏给了他，造父的后代便以赵为姓。 伯益：传说中舜帝的大臣，嬴姓各族的祖先。 &#8617; 造父：周穆王的驾车能手。 &#8617; 周穆王：姬姓，名满，西周第五位君主，在位期间曾西征昆仑，东攻徐国，颇具传奇色彩。 &#8617;" />
 <meta property="og:description" content="赵：嬴姓祖先伯益1的后代名叫造父2，造父为周穆王3驾车，在穆王出巡及征伐中屡屡建功，穆王于是把赵城封赏给了他，造父的后代便以赵为姓。 伯益：传说中舜帝的大臣，嬴姓各族的祖先。 &#8617; 造父：周穆王的驾车能手。 &#8617; 周穆王：姬姓，名满，西周第五位君主，在位期间曾西征昆仑，东攻徐国，颇具传奇色彩。 &#8617;" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-02T01:50:16+00:00" />
+<meta property="article:published_time" content="2024-08-02T09:00:07+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="赵钱孙李，周吴郑王。冯陈褚卫，蒋沈韩杨。" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-02T01:50:16+00:00","datePublished":"2024-08-02T01:50:16+00:00","description":"赵：嬴姓祖先伯益1的后代名叫造父2，造父为周穆王3驾车，在穆王出巡及征伐中屡屡建功，穆王于是把赵城封赏给了他，造父的后代便以赵为姓。 伯益：传说中舜帝的大臣，嬴姓各族的祖先。 &#8617; 造父：周穆王的驾车能手。 &#8617; 周穆王：姬姓，名满，西周第五位君主，在位期间曾西征昆仑，东攻徐国，颇具传奇色彩。 &#8617;","headline":"赵钱孙李，周吴郑王。冯陈褚卫，蒋沈韩杨。","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/zhao-qian-sun-li-zhou-wu-zheng-wang-feng-chen-chu-wei-jiang-shen-han-yang.html"},"url":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/zhao-qian-sun-li-zhou-wu-zheng-wang-feng-chen-chu-wei-jiang-shen-han-yang.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-02T09:00:07+00:00","datePublished":"2024-08-02T09:00:07+00:00","description":"赵：嬴姓祖先伯益1的后代名叫造父2，造父为周穆王3驾车，在穆王出巡及征伐中屡屡建功，穆王于是把赵城封赏给了他，造父的后代便以赵为姓。 伯益：传说中舜帝的大臣，嬴姓各族的祖先。 &#8617; 造父：周穆王的驾车能手。 &#8617; 周穆王：姬姓，名满，西周第五位君主，在位期间曾西征昆仑，东攻徐国，颇具传奇色彩。 &#8617;","headline":"赵钱孙李，周吴郑王。冯陈褚卫，蒋沈韩杨。","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/zhao-qian-sun-li-zhou-wu-zheng-wang-feng-chen-chu-wei-jiang-shen-han-yang.html"},"url":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/zhao-qian-sun-li-zhou-wu-zheng-wang-feng-chen-chu-wei-jiang-shen-han-yang.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -1069,39 +1069,14 @@
 
 
 
+
+
 <style>
-  {
-    % if page.zhu-yin-poetry %
-  }
-
-  ruby {
-    display: inline-block;
-    width: 25px;
-    text-align: center;
-  }
-
-  rt {
-    display: block;
-    width: 25px;
-    text-align: center;
-    margin-top: -2rem;
-  }
-
-  ruby+span.comma,
-  ruby+span.period {
-    position: relative;
-    top: 1.2em;
-    right: 0.2rem;
-  }
-
-    {
-    % endif %
-  }
-
   a:hover {
     color: rgb(170, 111, 2);
   }
 </style>
+
 
 <script>
 
@@ -1166,6 +1141,21 @@
         });
         parent.removeChild(prevElementSibling);
       }
+    }
+
+    //为每一个<br>元素后增加 span.indent 便于缩进 2 个汉字显示：
+    // 获取页面中所有的 <br> 元素
+    const brElements = document.getElementsByTagName('br');
+
+    // 遍历所有的 <br> 元素
+    for (let i = 0; i < brElements.length; i++) {
+      // 创建一个新的 <span> 元素
+      let span = document.createElement('span');
+      // 设置 <span> 元素的 class 属性
+      span.setAttribute('class', 'indent');
+
+      // 在 <br> 元素后面插入新创建的 <span> 元素
+      brElements[i].parentNode.insertBefore(span, brElements[i].nextSibling);
     }
 
   });

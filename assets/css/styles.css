@@ -12108,10 +12108,6 @@ body {
   flex-direction: column;
 }
 
-ul {
-  list-style: none;
-}
-
 a:hover {
   color: #007bff;
   text-decoration: underline;
@@ -12121,7 +12117,18 @@ a {
 }
 
 p {
+  text-indent: 2rem;
+}
+p {
   font-size: 1rem;
+}
+p .indent {
+  content: "";
+  display: inline-block;
+  width: 1.7rem; /* 2 个汉字的宽度 */
+}
+p + ol, p + ul {
+  margin-left: 2rem;
 }
 
 strong {
