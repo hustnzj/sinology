@@ -12165,6 +12165,10 @@ h2 {
   border-bottom: 1px solid rgb(227, 225, 225);
 }
 
+h4 {
+  margin-top: 1rem;
+}
+
 .outer-container {
   display: flex;
   justify-content: center;
