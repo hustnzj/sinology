@@ -13,7 +13,8 @@ def build_breadcrumbs(menu, parent_breadcrumbs=None):
             breadcrumbs_map.update(build_breadcrumbs(item['submenu'], current_breadcrumbs))
 
         if 'contents' in item['url']:
-            key = item['url'].strip('/').split('/')[-2]
+            # 将全路径处理后作为键名，保证唯一。
+            key = '_'.join(item['url'].strip('/').split('/')[0:-1])
             if key:
                 breadcrumbs_map[key] = current_breadcrumbs
 
