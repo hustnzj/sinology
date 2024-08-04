@@ -13,11 +13,11 @@
 <meta property="og:title" content="师巩厍聂，晁勾敖融。冷訾辛阚，那简饶空。" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-03T12:20:56+00:00" />
+<meta property="article:published_time" content="2024-08-04T00:28:52+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="师巩厍聂，晁勾敖融。冷訾辛阚，那简饶空。" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-03T12:20:56+00:00","datePublished":"2024-08-03T12:20:56+00:00","headline":"师巩厍聂，晁勾敖融。冷訾辛阚，那简饶空。","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/shi-gong-she-nie-chao-gou-ao-rong-leng-zi-xin-han-na-jian-rao-kong.html"},"url":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/shi-gong-she-nie-chao-gou-ao-rong-leng-zi-xin-han-na-jian-rao-kong.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-04T00:28:52+00:00","datePublished":"2024-08-04T00:28:52+00:00","headline":"师巩厍聂，晁勾敖融。冷訾辛阚，那简饶空。","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/shi-gong-she-nie-chao-gou-ao-rong-leng-zi-xin-han-na-jian-rao-kong.html"},"url":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/shi-gong-she-nie-chao-gou-ao-rong-leng-zi-xin-han-na-jian-rao-kong.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -849,7 +849,8 @@
 
         const a = document.createElement("a");
         a.href = `#${id}`;
-        a.textContent = text.replace(/\d+/g, '');
+        // 删除标题中的数字和拼音（但不包括非拼音的英文字母）
+        a.textContent = text.replace(/\d+/g, '').replace(/[a-zA-Zāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜü]+/g, '');
         a.dataset.level = heading.tagName;
 
         const nextLevelHeadingTagName = `H${parseInt(heading.tagName.replace('H', '')) + 1}`;

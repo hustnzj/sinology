@@ -15,11 +15,11 @@
 <meta name="description" content="丁：西周时姜太公望的儿子伋（jí）死后谥号丁公，丁公子孙遂以丁为姓。又三国时吴帝孙权宗室中有中郎将孙匡在伐曹时触犯军纪，孙权强令其族改姓为丁，因丁在古代是苦役的代称。又商代有丁国，第二十二代商王武丁就曾讨伐过丁国的反叛，丁国随同殷商一起被武王灭掉后，其后代便以丁为姓。" />
 <meta property="og:description" content="丁：西周时姜太公望的儿子伋（jí）死后谥号丁公，丁公子孙遂以丁为姓。又三国时吴帝孙权宗室中有中郎将孙匡在伐曹时触犯军纪，孙权强令其族改姓为丁，因丁在古代是苦役的代称。又商代有丁国，第二十二代商王武丁就曾讨伐过丁国的反叛，丁国随同殷商一起被武王灭掉后，其后代便以丁为姓。" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-03T12:20:56+00:00" />
+<meta property="article:published_time" content="2024-08-04T00:28:52+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="丁宣贲邓，郁单杭洪。包诸左石，崔吉钮龚。" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-03T12:20:56+00:00","datePublished":"2024-08-03T12:20:56+00:00","description":"丁：西周时姜太公望的儿子伋（jí）死后谥号丁公，丁公子孙遂以丁为姓。又三国时吴帝孙权宗室中有中郎将孙匡在伐曹时触犯军纪，孙权强令其族改姓为丁，因丁在古代是苦役的代称。又商代有丁国，第二十二代商王武丁就曾讨伐过丁国的反叛，丁国随同殷商一起被武王灭掉后，其后代便以丁为姓。","headline":"丁宣贲邓，郁单杭洪。包诸左石，崔吉钮龚。","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/ding-xuan-ben-deng-yu-dan-hang-hong-bao-zhu-zuo-shi-cui-ji-niu-gong.html"},"url":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/ding-xuan-ben-deng-yu-dan-hang-hong-bao-zhu-zuo-shi-cui-ji-niu-gong.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-04T00:28:52+00:00","datePublished":"2024-08-04T00:28:52+00:00","description":"丁：西周时姜太公望的儿子伋（jí）死后谥号丁公，丁公子孙遂以丁为姓。又三国时吴帝孙权宗室中有中郎将孙匡在伐曹时触犯军纪，孙权强令其族改姓为丁，因丁在古代是苦役的代称。又商代有丁国，第二十二代商王武丁就曾讨伐过丁国的反叛，丁国随同殷商一起被武王灭掉后，其后代便以丁为姓。","headline":"丁宣贲邓，郁单杭洪。包诸左石，崔吉钮龚。","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/ding-xuan-ben-deng-yu-dan-hang-hong-bao-zhu-zuo-shi-cui-ji-niu-gong.html"},"url":"/sinology/contents/sinology/guo-xue-qi-meng/bai-jia-xing/ding-xuan-ben-deng-yu-dan-hang-hong-bao-zhu-zuo-shi-cui-ji-niu-gong.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -902,7 +902,8 @@
 
         const a = document.createElement("a");
         a.href = `#${id}`;
-        a.textContent = text.replace(/\d+/g, '');
+        // 删除标题中的数字和拼音（但不包括非拼音的英文字母）
+        a.textContent = text.replace(/\d+/g, '').replace(/[a-zA-Zāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜü]+/g, '');
         a.dataset.level = heading.tagName;
 
         const nextLevelHeadingTagName = `H${parseInt(heading.tagName.replace('H', '')) + 1}`;
