@@ -12130,6 +12130,14 @@ p .indent {
 p + ol, p + ul {
   margin-left: 2rem;
 }
+p img {
+  text-indent: 0;
+  display: block;
+}
+p img.hanzi_cannot_typed {
+  display: inline;
+  width: 1rem;
+}
 
 strong {
   font-size: 1.2rem;
@@ -12326,6 +12334,10 @@ span.black-dot::after {
 
 .poetry_title {
   margin-bottom: 1rem;
+}
+
+rt {
+  font-size: 0.8em;
 }
 
 /*# sourceMappingURL=styles.css.map */
