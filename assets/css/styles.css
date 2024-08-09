@@ -12160,7 +12160,9 @@ h1 {
 }
 
 h1,
-h2, h3 {
+h2,
+h3,
+.poetry_title {
   margin-top: 6rem;
   margin-bottom: 2rem;
 }
@@ -12320,24 +12322,26 @@ span.black-dot::after {
   color: black;
 }
 
-:has(> .poetry_title), :has(> .poetry_body) {
+p:has(> .poetry_title),
+p:has(> .poetry) {
   display: flex;
   justify-content: center;
-  width: fit-content;
-  margin: 0 auto;
   text-align: center; /* 确保文本居中 */
 }
 
-.poetry_title, .poetry_body {
+.poetry_title,
+.poetry {
   display: inline-block;
-}
-
-.poetry_title {
-  margin-bottom: 1rem;
+  white-space: nowrap; /* 防止内容换行 */
+  width: 100%;
 }
 
 rt {
   font-size: 0.8em;
+}
+
+rt[data-symbol] {
+  font-size: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -918,6 +918,14 @@ kinds of large herbaceous flowering plants in the genus Musa.</p>
           new bootstrap.Tooltip(tooltipElement);
         }
       });
+
+      // 自动标记包含特定符号的 rt 标签
+      const punctuationRegex = /[，。！？；：（）（《》“”‘’]/;
+      document.querySelectorAll('rt').forEach(function (rt) {
+        if (punctuationRegex.test(rt.textContent)) {
+          rt.setAttribute('data-symbol', rt.textContent.trim());
+        }
+      });
     });
   </script>
 </body>
