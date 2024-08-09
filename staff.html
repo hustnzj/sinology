@@ -900,12 +900,12 @@
       });
 
       // 自动标记包含特定符号的 rt 标签
-      const punctuationRegex = /[，。！？；：（）（《》“”‘’]/;
-      document.querySelectorAll('rt').forEach(function (rt) {
-        if (punctuationRegex.test(rt.textContent)) {
-          rt.setAttribute('data-symbol', rt.textContent.trim());
-        }
-      });
+      // const punctuationRegex = /[，。！？；：（）（《》“”‘’]/;
+      // document.querySelectorAll('rt').forEach(function (rt) {
+      //   if (punctuationRegex.test(rt.textContent)) {
+      //     rt.setAttribute('data-symbol', rt.textContent.trim());
+      //   }
+      // });
     });
   </script>
 </body>
