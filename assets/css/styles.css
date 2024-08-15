@@ -12105,6 +12105,7 @@ body {
   background-color: rgb(229, 232, 232);
   min-height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
 }
 
@@ -12182,11 +12183,13 @@ h4 {
 
 .outer-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   background-color: #ffffff;
   padding: 0 20px 20px 0;
   border-radius: 5px;
@@ -12217,6 +12220,7 @@ h4 {
 #toc li {
   margin: 5px 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 #toc a {
@@ -12331,6 +12335,7 @@ span.black-dot::after {
 p:has(> .poetry_title),
 p:has(> .poetry) {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   text-align: center; /* 确保文本居中 */
 }
