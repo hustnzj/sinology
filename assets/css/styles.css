@@ -12097,6 +12097,12 @@ textarea.form-control-lg {
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .current {
   color: green;
 }
