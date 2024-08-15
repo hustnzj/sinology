@@ -12236,6 +12236,9 @@ h4 {
 nav#menu {
   position: sticky;
   top: 0;
+  left: 0;
+  width: calc(100% + 40px); /* 20px 为 .content 的 margin-left 值 */
+  margin-left: -20px;
   background-color: #f7f7f7;
   z-index: 12;
 }
@@ -12287,6 +12290,8 @@ nav#menu ul li ul li ul {
 #breadcrumbs {
   position: sticky;
   top: 85px;
+  width: calc(100% + 40px); /* 20px 为 .content 的 margin-left 值 */
+  margin-left: -20px;
   background-color: #f7f7f7;
   z-index: 1;
 }
@@ -12332,7 +12337,7 @@ p:has(> .poetry) {
 .poetry_title,
 .poetry {
   display: inline-block;
-  white-space: nowrap; /* 防止内容换行 */
+  white-space: normal; /* 允许内容换行，这个非常关键，否则会造成.content 的宽度是一个固定值 */
   width: 100%;
 }
 
