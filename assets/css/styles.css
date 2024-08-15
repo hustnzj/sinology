@@ -12357,4 +12357,21 @@ rt {
   font-size: 0.8em;
 }
 
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  nav#menu ul {
+    display: block;
+    text-align: left;
+  }
+  h1, h2, h3, h4 {
+    text-align: left;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
