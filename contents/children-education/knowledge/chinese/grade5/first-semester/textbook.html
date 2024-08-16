@@ -15,11 +15,11 @@
 <meta name="description" content="第一单元 一花一鸟总关情。" />
 <meta property="og:description" content="第一单元 一花一鸟总关情。" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-15T23:25:09+00:00" />
+<meta property="article:published_time" content="2024-08-16T01:50:50+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="课本" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-15T23:25:09+00:00","datePublished":"2024-08-15T23:25:09+00:00","description":"第一单元 一花一鸟总关情。","headline":"课本","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/children-education/knowledge/chinese/grade5/first-semester/textbook.html"},"url":"/sinology/contents/children-education/knowledge/chinese/grade5/first-semester/textbook.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-16T01:50:50+00:00","datePublished":"2024-08-16T01:50:50+00:00","description":"第一单元 一花一鸟总关情。","headline":"课本","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/children-education/knowledge/chinese/grade5/first-semester/textbook.html"},"url":"/sinology/contents/children-education/knowledge/chinese/grade5/first-semester/textbook.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <script type="text/x-mathjax-config">
@@ -1298,6 +1298,7 @@ C: 《落花生》中，作者借花生朴实无华、用处很多的特点说�
       // 自动转换属于诗词的 p 标签 为 ruby + rt 的格式：——————————————————————————START
       // 获取所有的 <p> 标签
       const pTags = document.querySelectorAll("p");
+      const hanziRegex = /[\u4E00-\u9FFF㸌]/g; //有不能匹配的汉字都直接加到这里。
 
       pTags.forEach(pTag => {
         const lines = pTag.innerHTML.split('\n').map(line => line.trim());
@@ -1311,11 +1312,10 @@ C: 《落花生》中，作者借花生朴实无华、用处很多的特点说�
           // 检查第一行是否只包含拼音、空格和可选的《
           const isPinyinLine = /^[《]?[a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ\s]*[》]?[a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ\s]*$/.test(firstLine);
           // 检查第二行是否只包含汉字、 《 和 <sup> 标签，且 sup 标签外只有汉字和 《
-          const isChineseLine = /^[《]?[\u4e00-\u9fff]+[》]?(\s*<sup[^>]*>.*?<\/sup>)?[\u4e00-\u9fff]*$/.test(secondLine);
-
-          // if(lines[0]=="《qín gē》"){
-          //   console.log(isPinyinLine, isChineseLine)
-          // }
+          // const isChineseLine = /^[《]?[\u4E00-\u9FFF㸌]+[》]?(\s*<sup[^>]*>.*?<\/sup>)?[\u4E00-\u9FFF㸌]*$/.test(secondLine);
+          const isChineseLine = new RegExp(
+            `^[《]?${hanziRegex.source}+[》]?(\\s*<sup[^>]*>.*?<\\/sup>)?${hanziRegex.source}*$`
+          ).test(secondLine);  // 在 JavaScript 中，直接使用正则表达式字面量 `/.../` 时，反斜杠 `\` 无需双重转义，而通过 `new RegExp()` 并以字符串创建正则表达式时，反斜杠 `\` 需双重转义，如 `\s` 要写成 `\\s` 。 
 
           if (isPinyinLine && isChineseLine) {
             // 此处插入处理函数，将符合条件的内容转换为带 <ruby><rt> 标签的格式
@@ -1327,17 +1327,14 @@ C: 《落花生》中，作者借花生朴实无华、用处很多的特点说�
 
       function generateRubyHTML(lines) {
         let htmlOutput = '';
-        // 中文汉字
-        const hanzi = /[\u4e00-\u9fff]/g
         // 中文标点
         const chinesePunStr = "，。！？；：（）《》“”‘’";
         const chinesePunRegex = new RegExp(`[${chinesePunStr}]`, 'g');
         // const chinesePunRegex = /[\u3000-\u303F\uFF00-\uFFEF]/g;
         // sup 脚注
-        const supFootNote = /<sup[^>]*>.*?<\/sup>/g
+        const supFootNoteRegex = /<sup[^>]*>.*?<\/sup>/g
         //汉字行正则，用于提取汉字、中文标点、脚注sup
-        // const chineseSegRegex = /[\u4e00-\u9fff]|[，。！？；：（）《》“”‘’]|<sup[^>]*>.*?<\/sup>/g;
-        const chineseSegRegex = new RegExp(`(${hanzi.source})|(${chinesePunRegex.source})|(${supFootNote.source})`, 'g');
+        const chineseSegRegex = new RegExp(`(${hanziRegex.source})|(${chinesePunRegex.source})|(${supFootNoteRegex.source})`, 'g');
 
         // 依次遍历拼音行和汉字行
         for (let i = 0; i < lines.length; i += 2) {
@@ -1348,7 +1345,7 @@ C: 《落花生》中，作者借花生朴实无华、用处很多的特点说�
           let rubyHTML = '';
 
           //获得拼音行数组
-          const pinyinSegments = pinyinLine.replace(supFootNote, '').replace(chinesePunRegex, ' ').split(' ').filter(Boolean);
+          const pinyinSegments = pinyinLine.replace(supFootNoteRegex, '').replace(chinesePunRegex, ' ').split(' ').filter(Boolean);
 
           //汉字行数组
           const chineseSegments = chineseLine.match(chineseSegRegex).filter(Boolean);
@@ -1356,9 +1353,6 @@ C: 《落花生》中，作者借花生朴实无华、用处很多的特点说�
           let pinyinIndex = 0;
           for (let i = 0; i < chineseSegments.length; i++) {
             let segment = chineseSegments[i];
-            // if (chineseSegments[0]==='忽'){
-            //   console.log(segment, chinesePunRegex.test(segment), chinesePunRegex.test(segment))
-            // }
             if (segment.startsWith('<sup')) {
               // 如果 segment 是 sup 标签表示的脚注，则直接添加到 rubyHTML
               rubyHTML += segment;
@@ -1383,7 +1377,6 @@ C: 《落花生》中，作者借花生朴实无华、用处很多的特点说�
         }
 
         function countChineseCharacters(lines) {
-          const hanziRegex = /[\u4e00-\u9fff]/g;
           return lines.reduce((count, line) => {
             const matches = line.match(hanziRegex);
             return count + (matches ? matches.length : 0);
