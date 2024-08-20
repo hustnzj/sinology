@@ -15,11 +15,11 @@
 <meta name="description" content="唐玄宗" />
 <meta property="og:description" content="唐玄宗" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-18T07:14:48+00:00" />
+<meta property="article:published_time" content="2024-08-20T08:53:13+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="卷五. 五言律诗" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-18T07:14:48+00:00","datePublished":"2024-08-18T07:14:48+00:00","description":"唐玄宗","headline":"卷五. 五言律诗","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/si-ci-ge-fu/research-monograph/newNotesOnThreeHundredTangPoems/juan-5-wu-yan-lv-shi.html"},"url":"/sinology/contents/sinology/si-ci-ge-fu/research-monograph/newNotesOnThreeHundredTangPoems/juan-5-wu-yan-lv-shi.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-20T08:53:13+00:00","datePublished":"2024-08-20T08:53:13+00:00","description":"唐玄宗","headline":"卷五. 五言律诗","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/sinology/si-ci-ge-fu/research-monograph/newNotesOnThreeHundredTangPoems/juan-5-wu-yan-lv-shi.html"},"url":"/sinology/contents/sinology/si-ci-ge-fu/research-monograph/newNotesOnThreeHundredTangPoems/juan-5-wu-yan-lv-shi.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <script type="text/x-mathjax-config">
@@ -3267,7 +3267,7 @@ chǔ），捣衣用具。砧，垫石。杵，棒槌。古代捣衣多在秋晚�
             } else {
               // 否则，添加拼音和汉字
               let pinyinSegment = pinyinSegments[pinyinIndex] || ''; // 处理可能不存在的拼音段
-              rubyHTML += `<ruby>${segment}<rt> ${pinyinSegment} </rt></ruby>`;
+              rubyHTML += `<ruby><a href="https://dict.baidu.com/s?wd=${segment}" target="_blank">${segment}</a><rt> ${pinyinSegment} </rt></ruby>`; //并添加上百度汉语的超链接
               pinyinIndex++; // 递增拼音索引
             }
           }
@@ -3290,6 +3290,15 @@ chǔ），捣衣用具。砧，垫石。杵，棒槌。古代捣衣多在秋晚�
         return htmlOutput;
       }
       // 自动转换属于诗词的 p 标签 为 ruby + rt 的格式：——————————————————————————END
+
+      // 给所有非诗词正文的 ruby 标签中的汉字添加上百度汉语超链接
+      const rubies_not_in_poetry = document.querySelectorAll('.content > p > ruby');
+      rubies_not_in_poetry.forEach(ruby => {
+        const chineseCharacter = ruby.textContent.match(hanziRegex)[0];
+        const newContent = `<ruby><a href="https://dict.baidu.com/s?wd=${chineseCharacter}" target="_blank">${chineseCharacter}</a><rt>${ruby.querySelector('rt').textContent}</rt></ruby>`;
+        ruby.innerHTML = newContent;
+      });
+
 
       // 页面上的 toc 目录
       const toc = document.querySelector("#toc ul");
