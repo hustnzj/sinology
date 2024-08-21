@@ -6,6 +6,10 @@
   <title>Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/sinology/assets/css/styles.css">
+
+  <!-- 有选择性的设置 CSS 样式 -->
+  
+
   <link type="application/atom+xml" rel="alternate" href="/sinology/feed.xml" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Blog</title>
@@ -1226,7 +1230,9 @@ kinds of large herbaceous flowering plants in the genus Musa.</p>
         const a = document.createElement("a");
         a.href = `#${id}`;
         // 删除标题中的数字和拼音（但不包括非拼音的英文字母）
-        a.textContent = text.replace(/\d+/g, '').replace(/[a-zA-Zāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜü\s]+/g, '');
+        
+          a.textContent = text
+        
         a.dataset.level = heading.tagName;
 
         const nextLevelHeadingTagName = `H${parseInt(heading.tagName.replace('H', '')) + 1}`;

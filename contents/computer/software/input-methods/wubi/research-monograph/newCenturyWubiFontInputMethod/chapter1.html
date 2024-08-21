@@ -3,21 +3,27 @@
 
 <head>
   <meta charset="utf-8">
-  <title>chapter1</title>
+  <title>第一章 汉字输入法简介</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/sinology/assets/css/styles.css">
+
+  <!-- 有选择性的设置 CSS 样式 -->
+  
+
   <link type="application/atom+xml" rel="alternate" href="/sinology/feed.xml" />
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>chapter1</title>
+<title>第一章 汉字输入法简介</title>
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="chapter1" />
+<meta property="og:title" content="第一章 汉字输入法简介" />
 <meta property="og:locale" content="en_US" />
+<meta name="description" content="内容导读 本章主要对汉字输⼊法作了简单介绍和对五笔字型输⼊法相关知识给予了讲解; 通过本章的学习， 可使读者对汉字输⼊法有个较全⾯的认识， 为进⼀步 学习新世纪五笔输⼊法打下基础。" />
+<meta property="og:description" content="内容导读 本章主要对汉字输⼊法作了简单介绍和对五笔字型输⼊法相关知识给予了讲解; 通过本章的学习， 可使读者对汉字输⼊法有个较全⾯的认识， 为进⼀步 学习新世纪五笔输⼊法打下基础。" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-20T11:52:19+00:00" />
+<meta property="article:published_time" content="2024-08-21T08:48:13+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="chapter1" />
+<meta property="twitter:title" content="第一章 汉字输入法简介" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-20T11:52:19+00:00","datePublished":"2024-08-20T11:52:19+00:00","headline":"chapter1","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/computer/software/input-methods/wubi/research-monograph/newCenturyWubiFontInputMethod/chapter1.html"},"url":"/sinology/contents/computer/software/input-methods/wubi/research-monograph/newCenturyWubiFontInputMethod/chapter1.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-21T08:48:13+00:00","datePublished":"2024-08-21T08:48:13+00:00","description":"内容导读 本章主要对汉字输⼊法作了简单介绍和对五笔字型输⼊法相关知识给予了讲解; 通过本章的学习， 可使读者对汉字输⼊法有个较全⾯的认识， 为进⼀步 学习新世纪五笔输⼊法打下基础。","headline":"第一章 汉字输入法简介","mainEntityOfPage":{"@type":"WebPage","@id":"/sinology/contents/computer/software/input-methods/wubi/research-monograph/newCenturyWubiFontInputMethod/chapter1.html"},"url":"/sinology/contents/computer/software/input-methods/wubi/research-monograph/newCenturyWubiFontInputMethod/chapter1.html"}</script>
 <!-- End Jekyll SEO tag -->
 
   <script type="text/x-mathjax-config">
@@ -1080,17 +1086,405 @@
       
       <li class="breadcrumb-item"><a href="/sinology/contents/computer/software/input-methods/wubi/research-monograph/newCenturyWubiFontInputMethod/toc.html">新世纪五笔字型输入法</a></li>
       
-      <!-- <li class="breadcrumb-item active" aria-current="page">chapter1</li> -->
+      <!-- <li class="breadcrumb-item active" aria-current="page">第一章 汉字输入法简介</li> -->
     </ol>
   </nav>
 
 
         
-  <h1>chapter1</h1>
+  <h1>第一章 汉字输入法简介</h1>
 
 
 
+<h2 id="内容导读">内容导读</h2>
+<p>本章主要对汉字输⼊法作了简单介绍和对五笔字型输⼊法相关知识给予了讲解; 通过本章的学习， 可使读者对汉字输⼊法有个较全⾯的认识， 为进⼀步 学习新世纪五笔输⼊法打下基础。</p>
 
+<h2 id="知识要点">知识要点</h2>
+<ul>
+  <li>汉字编码</li>
+  <li>汉字输⼊法的分类</li>
+  <li>汉字输⼊法状态条</li>
+  <li>五笔字型的基本笔画与汉字层次</li>
+  <li>五笔字型的字根结构关系与汉字位置关系</li>
+</ul>
+
+<h2 id="11-汉字输法">1.1 汉字输⼊法</h2>
+<blockquote>
+  <p>汉字输⼊法，通常⼜称为中⽂输⼊法，是通过ASCII字符<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>的组合(⼜称为ASCII编码<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>)或者⼿写、语⾳将汉字输⼊到计算机<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>等电⼦设备<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>中的⽅法。</p>
+</blockquote>
+
+<p>计算机中的数据是⽤⼆进制<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>表示的，计算机是不能识别英⽂，更不能识别中⽂的。因此，要让计算机认识⼈类语⾔<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>，就必须建⽴⼀个代码表<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>，⼈们依据代码表的转换规则，将英⽂、中⽂和其他字符组成的信息转换成计算机能识别的由“0”或“1”组成的代码<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>，然后再将这些代码输⼊到计算机中，这样就保证了⼈类和计算机之间能进⾏正确的信息交换，让计算机能以⼈类可阅读的形式将信息在屏幕上显示出来或⼈机交流。⽬前国际上使⽤的代码表是“ASCII码表<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>”，它的全称是“美国信息交换标准代码<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>”。由任何编码⽅法<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup>编出来的信息编码<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup>最终都要转换到ASCII码<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">13</a></sup>，以便计算机识别。</p>
+
+<p>最早的汉字输⼊法是邮电局<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">14</a></sup>⽤于发送电报<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">15</a></sup>的电报码<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">16</a></sup>，是⽤⼗进制<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote" rel="footnote">17</a></sup>中的0~9数字中的4个数字组合构成每⼀个汉字的编码<sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">18</a></sup>。但通常意义上⼈们还是认为，直⾄20世纪70年代末期⾄20世纪80年代初期PC<sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote" rel="footnote">19</a></sup>的出现，并在PC上开始使⽤如以⾳码<sup id="fnref:20" role="doc-noteref"><a href="#fn:20" class="footnote" rel="footnote">20</a></sup>形式的拼⾳输⼊法或以型码<sup id="fnref:21" role="doc-noteref"><a href="#fn:21" class="footnote" rel="footnote">21</a></sup>形式的五笔输⼊法，才标志着汉字输⼊法的真正诞⽣。</p>
+
+<h3 id="111-汉字编码">1.1.1 汉字编码</h3>
+<p>汉字是由笔画组成的⽅块字，所以输⼊汉字不能像输⼊英⽂那样，⽤键盘上的26个字⺟来直接表示。为此，⼈们想到了将汉字的读⾳或汉字的笔画结构编成英⽂字⺟或数字的代码来代替汉字。使⽤这些代码就可以⽤键盘间接地向计算机输⼊汉字了。</p>
+
+<p>为汉字编制英⽂字⺟或数字代码的⽅法称为“汉字编码⽅法”。⽤不同的“汉字编码⽅法”为汉字编成的代码称为“汉字编码”，也称为“汉字的外码或输⼊码”。</p>
+<h3 id="112-汉字输法的分类">1.1.2 汉字输⼊法的分类</h3>
+<p>⽬前已有⼏百种汉字输⼊法，在计算机中使⽤的也有⼏⼗种，它们可以概括为5⼤类别。</p>
+<ol>
+  <li>
+    <p><strong>数字码输⼊法</strong><br />
+利⽤汉字的国标码<sup id="fnref:22" role="doc-noteref"><a href="#fn:22" class="footnote" rel="footnote">22</a></sup>作为编码，⽤4个数字输⼊⼀个汉字或符号，如区位码<sup id="fnref:23" role="doc-noteref"><a href="#fn:23" class="footnote" rel="footnote">23</a></sup>和电报码等。</p>
+  </li>
+  <li>
+    <p><strong>⾳码输⼊法</strong><br />
+按照汉字的读⾳进⾏汉字编码。对汉字的⼀个或多个读⾳进⾏取码<sup id="fnref:24" role="doc-noteref"><a href="#fn:24" class="footnote" rel="footnote">24</a></sup>，所得的整个汉字编码就是这个汉字的⾳码，如全拼<sup id="fnref:25" role="doc-noteref"><a href="#fn:25" class="footnote" rel="footnote">25</a></sup>、简拼<sup id="fnref:26" role="doc-noteref"><a href="#fn:26" class="footnote" rel="footnote">26</a></sup>和智能ABC<sup id="fnref:27" role="doc-noteref"><a href="#fn:27" class="footnote" rel="footnote">27</a></sup>等拼⾳输⼊法。</p>
+  </li>
+  <li>
+    <p><strong>形码输入法</strong><br />
+按照汉字的字形进⾏汉字编码。利⽤汉字书写的基本顺序将汉字拆
+分成若⼲块，对每⼀块⽤⼀个字⺟进⾏取码，所得的整个汉字编码就是这
+个汉字的形码。<strong>形码不会像⾳码那样，因受⽅⾔或者⼀字多⾳的影响使编
+码困难</strong>，如五笔字型、五笔画和打字通等。</p>
+  </li>
+  <li>
+    <p><strong>⾳形码输⼊法</strong><br />
+⾳形码输⼊是利⽤⾳码和形码各⾃的优点，兼顾了汉字的⾳和形，
+这种码通常以⾳为主，以形为辅。编码中有以⾳⽽形成的码，也有以形
+⽽形成的码，⽬的是减少编码中死记的部分，提⾼输⼊效率，易学易记，
+如表形码<sup id="fnref:28" role="doc-noteref"><a href="#fn:28" class="footnote" rel="footnote">28</a></sup>和认识码<sup id="fnref:29" role="doc-noteref"><a href="#fn:29" class="footnote" rel="footnote">29</a></sup>等。</p>
+  </li>
+  <li>
+    <p><strong>形⾳码输⼊法</strong><br />
+形⾳码也是采⽤形和⾳两⽅⾯的信息特征编码键⼊汉字，兼顾了汉
+字的形和⾳，这种码通常以形为主，以⾳为辅。编码也是由形码和⾳码
+组成的，⽬的是减少编码中死记的部分，提⾼输⼊效率，易学易记，如
+世纪形⾳码<sup id="fnref:30" role="doc-noteref"><a href="#fn:30" class="footnote" rel="footnote">30</a></sup>等。</p>
+  </li>
+</ol>
+
+<h3 id="113-汉字输法状态条">1.1.3 汉字输⼊法状态条</h3>
+<blockquote>
+  <p>本节内容多数没啥用。略。</p>
+</blockquote>
+
+<ol>
+  <li><strong>全角/半角</strong><br />
+“全⻆”指⼀个字符占⽤两个标准字符的宽度。“半⻆”指⼀个字
+符占⽤⼀个标准字符的宽度。</li>
+</ol>
+
+<p>半⻆、全⻆主要是针对标点、符号、数字和英⽂字⺟⽽⾔的，在全
+⻆时，它们占两个标准字符的宽度，即两个字节;半⻆时占⼀个标准字
+符的宽度，即⼀个字节。</p>
+
+<p>汉字就不同了，不管是半⻆还是全⻆，汉字都占两个字节。</p>
+
+<p>可以理解为⼀个全⻆的宽度是⼀个半⻆的宽度的2倍。半⻆、全⻆
+字符宽度对⽐参照表如图1-2所示。</p>
+
+<p><img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211006622.png" alt="image-20240821100631495" /></p>
+
+<p>在中英⽂混合输⼊时，通常在半⻆状态输⼊⽂本，这样英⽂、符号
+只占⼀个汉字的半个宽度，⽂本显示⽐较美观。</p>
+
+<h2 id="12-五笔字型基础知识">1.2 五笔字型基础知识</h2>
+<p>五笔字型输⼊法，通常⼜称为王码输⼊法，是王永⺠先⽣发明的汉
+字输⼊法。⾃1983年五笔字型问世以来，王永⺠先⽣先后共推出了标准
+86版、98版和新世纪版三代定型版本。</p>
+
+<p>五笔字型输⼊法属形码输⼊法，它将汉字拆分成若⼲个块，然后对
+这些块进⾏编码，⽆论多么复杂的汉字，最多只需⽤4个码表示。也就
+是说，<strong>⽆论什么汉字，只需击键4次即可输⼊计算机中。</strong></p>
+
+<p>五笔字型输⼊法是⽬前输⼊汉字<strong>最快</strong>的⼀种⽅法，适⽤于专业打
+字员。它的最⼤优势在于<strong>重码率低</strong>，⼀个汉字编码基本上能做到只对
+应⼀个汉字，不需像其他汉字输⼊法那样，要在编码结果中去挑选⾃
+⼰需要的汉字，这样就提⾼了输⼊速度，也便于盲打。但由于它对字
+的拆分规则⽐较特殊，也有⼀定的难度，需要通过专⻔的训练才能掌
+握。</p>
+
+<p><strong>为什么叫五笔字型输⼊法呢?因为所有汉字都由“横、竖、撇、捺、
+折”5种笔画组成</strong>，所以发明者王永⺠先⽣把由他发明的汉字输⼊法称
+为五笔字型输⼊法，简称五笔输⼊法、五笔字型和王码等。</p>
+
+<h3 id="121-五笔字型输法">1.2.1 五笔字型输⼊法</h3>
+<p>王永⺠先⽣依据⾃⼰提出的“形码设计三原理”和“汉字字根周期
+表”发明的4码形码汉字编码法和字词兼容技术，于1983年在世界上⾸
+破汉字输⼊电脑每分钟100⼤关。该项开创性发明创造了实⽤化的
+“中国信息时代全新的汉字书写⽅式”，突破中⽂电脑化的“瓶颈”，
+被国内外专家誉为中国⽂化史上“不亚于活字印刷术”的重⼤发明，是
+20世纪100年间全世界最伟⼤的100项发明之⼀。王永⺠先⽣是“
+中国带⼊信息时代的⼈”。</p>
+
+<p>1983年五笔字型问世以来，王永⺠先⽣先后共推出了3代定型版
+本。1986年推出的标准86版，是“五笔字型”的第1代版本，⽬前
+仍是国内外应⽤最⼴泛的版本;1998年推出了符合规范的第2代98
+版;2008年⼜推出了第3代编码规范、键位优化、可输⼊27533个简
+繁汉字的“新世纪版”，并开发了具有25项创新功能、“3代同堂”的
+王码⼤⼀统五笔字型普及版软件，简称为“WBD2008”，它包含并兼
+容五笔字型18030(升级标准86版)、98版五笔字型、新世纪版五笔
+字型(新专利)3个版本，⽤户可以⽅便地随意选⽤3种五笔字型输
+⼊法中的任⼀种输⼊汉字，全⾯实现五笔字型技术和软件的“⼤⼀
+统”。</p>
+
+<p>WBD2008还包含有数字王码的跑步输⼊法——王码五键，⽅便记
+忆字根困难或不愿记字根的⼈⽤五笔字型输⼊法输⼊汉字。</p>
+
+<p>另外，WBD2008在3种五笔字型版本下不做任何切换就可⽤拼
+⾳法输⼊汉字，可谓想打五笔就打五笔，想打拼⾳就打拼⾳，并且打
+五笔时可显示汉字的拼⾳码，打拼⾳时可显示汉字的五笔码，⾮常⽅
+便。</p>
+
+<h3 id="122-五笔字型的基本笔画">1.2.2 五笔字型的基本笔画</h3>
+<p>汉字的笔画就是书写汉字时⼀次写成的<strong>⼀条连续不断的线段</strong>。
+在五笔字型中，汉字按笔势的⾛向可分为5种基本笔画，即横、竖、撇、捺和折。
+五种笔画分别以代号“1”、“2”、“3”、“4”、“5”表示，
+⻅表1-1。</p>
+
+<p><img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211105930.png" alt="image-20240821110526892" /></p>
+
+<p>从笔画的笔势⾛向分析，⼀些变形笔画可归类于相应的基本笔画中。</p>
+
+<p>1) “提⼀”属“横”。<br />
+如“现”的王字旁的提笔“⼀”，归类于“横”。</p>
+
+<p>2) “左竖勾”属“竖”;“右竖勾”属“折”。<br />
+如“⼿”的最后⼀笔是“左竖钩”，归类于“竖”;<br />
+如“即”的第4笔是“右竖钩”，归类于“折”。</p>
+
+<p>3) “点、”属“捺”。<br />
+如“⽅”的第1笔是“点”，归类于“捺”。</p>
+
+<p>4) ⼀切带转折的笔画均属“折”。<br />
+如“万”的第3笔“横折勾”，归类于“折”;<br />
+如“通”的第1笔是“横勾”，也归类于“折”。</p>
+
+<h3 id="123-五笔字型的字根">1.2.3 五笔字型的字根</h3>
+<p>在五笔字型中，通常将基本笔画组成的相对不变的“基本笔画结构”
+称为“字根”或“部件”，它类似汉字字典中的“偏旁部⾸”。当“字根”
+或“部件”⽤于编码的时候，⼜称为“码元”，意思是编码的“元素”。</p>
+
+<p>不同的汉字输⼊法都有⾃⼰的字根系统，如“新世纪版”王码有226
+个简体字根，⽐86版王码少28个字根。</p>
+<h3 id="124-五笔字型的汉字层次">1.2.4 五笔字型的汉字层次</h3>
+<p>在五笔字型中，汉字可分为3个层次，即笔画、字根(码元)和单字。
+也就是说，<strong>汉字是由若⼲笔画以⼀定形式组成相对不变的基本笔画
+结构⸺字根，再由字根以⼀定位置关系拼合成单个汉字。</strong></p>
+
+<p>五笔字型中的字根类似于汉字字典中的“偏旁部⾸”，是构成汉字
+的最基本的单元。五笔字型输⼊法就是以字根为基本单元来编制汉字编
+码的汉字输⼊⽅法。</p>
+
+<p>笔画、字根和单字的关系⻅表 1-2 。
+<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211118441.png" alt="image-20240821111846411" /></p>
+
+<blockquote>
+  <p><strong>注明</strong><br />
+在表 1-2 中, 笔画列中的笔画取的是单字列中单字的第⼀、第⼆、第三和末笔画。</p>
+</blockquote>
+
+<h3 id="125-五笔字型的字根结构关系">1.2.5 五笔字型的字根结构关系</h3>
+<p>汉字是由字根与字根链接在⼀起⽽形成的。根据构成汉字的各个字
+根之间的结构关系，可以把成千上万的⽅块汉字的字根分为4种结构关
+系，即<strong>单、散、连、交</strong>的结构关系。</p>
+
+<ol>
+  <li>
+    <p><strong>单</strong><br />
+⼀个字根本身就是⼀个汉字，如⼀、⼆、三、王、⽩、⽬等，这些
+汉字本身既是汉字，也是固定不变的笔画结构，在其他的汉字中经常出
+现，是其他汉字的⼀部分，起着基本笔画结构的作⽤。</p>
+  </li>
+  <li>
+    <p><strong>散</strong><br />
+⼀个汉字由多个字根组成，并且字根之间有⼀定距离，如汉、增、笔等。</p>
+  </li>
+  <li>
+    <p><strong>连</strong><br />
+连有两种。<br />
+1) ⼀个字根与⼀个单笔画相连,如⾃、千、夭、天等。<br />
+2) ⼀个字根与带点结构结合, 如勺、术、太、刃等。</p>
+  </li>
+  <li>
+    <p><strong>交</strong><br />
+多个字根交叉链接在⼀起，如“申”是由“⽇、｜”两个字根交叉
+链接组成的;“⾥”是由“⽇、⼟”两个字根交叉链接组成的。</p>
+  </li>
+</ol>
+
+<h3 id="126-五笔字型的汉字位置关系">1.2.6 五笔字型的汉字位置关系</h3>
+<p>汉字是⼀种平⾯⽂字,同样的⼏个字根,同样的先后顺序,摆放
+的位置不同,就是不同的字。</p>
+
+<p>如字根“⼝、⼋”可组成“叭”和“只”;<br />
+字根“⼝、巴”可组成“吧”和“⾢”;<br />
+字根“九、⽇”可组成“旭”和“旮”;<br />
+字根“⼭、⼰”可组成“岂“和“屺”</p>
+
+<p>可⻅,字根间相互的位置关系是汉字图形的另⼀个基本特征。这
+种位置关系就是<strong>“字型”关系</strong>。根据构成汉字的各个字根之间的位置
+关系,可以把成千上万的⽅块汉字分为3种字型,即左右型、上下型
+和杂合型,分别⽤数字1、2、3表示。</p>
+
+<ol>
+  <li>
+    <p><strong>左右型</strong><br />
+左右型汉字的字根与字根之间有⼀定的距离,从整体上来看,字
+根呈左右排列,如划、形、担、班、侧、锄、貌、横、情、到、封、
+教等。<br />
+虽然“封、教”等字的左边呈上下结构,“貌、横”等字的右边呈
+上下结构,但字的整体是呈左右结构的,所以仍是左右型。<br />
+左右型的汉字可分为双合字和三合字。<br />
+双合字可⽤图示 <img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211244523.png" alt="image-20240821124438479-inline" /> 表示,如划、形、担等;<br />
+三合字有3种,如“班、侧、锄”等字可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211253275.png" alt="image-20240821125330232-inline" />表示;<br />
+如“貌、横、情”等字可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211254544.png" alt="image-20240821125427499-inline" />表示;<br />
+如“到、封、教”等字可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211254919.png" alt="image-20240821125452874-inline" />表示。</p>
+  </li>
+  <li>
+    <p><strong>上下型</strong><br />
+上下型汉字的字根与根之间有⼀定的距离,从整体上来看,字
+根呈上下排列,如字、节、看、意、等、营、花、品、莉、想、型、
+些等。<br />
+虽然“想、型、竖”等字的上部呈左右结构,“花、命、品”等字
+的下部呈左右结构,但字的整体是呈上下结构的,所以仍是上下型。<br />
+上下型的汉字也可分为双合字和三合字。<br />
+双合字可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211257480.png" alt="image-20240821125729433-inline" />表示,如字、节、看等;<br />
+三合字也有3种,如“意、等、营”等字可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211257261.png" alt="image-20240821125740213-inline" />表示;<br />
+如“花、品、莉”等字可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211257437.png" alt="image-20240821125745396-inline" />表示:<br />
+如“想、型、些”等字可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211257468.png" alt="image-20240821125749422-inline" />表示。</p>
+  </li>
+  <li>
+    <p><strong>杂合型</strong><br />
+字根相互包围、相连、相交的汉字统归杂合型。有以下6种结构关
+系的汉字都属于杂合型。<br />
+1) 半包围的汉字<br />
+如包、原、匹、习、间、凶等,可⽤<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211302997.png" alt="image-20240821130210958-inline" /><img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211302513.png" alt="image-20240821130216477-inline" /><img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211302459.png" alt="image-20240821130220422-inline" /><img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211302436.png" alt="image-20240821130224399-inline" /><img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211302773.png" alt="image-20240821130228737-inline" /><img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211302264.png" alt="image-20240821130233227-inline" />
+等图示表示。<br />
+2) 内外型的汉字<br />
+如叉、回、圆、因、困、国、固、围等,可⽤<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211305414.png" alt="image-20240821130544376-inline" />
+图示表示。<br />
+3) 单笔画与成字字根相连⽽成的汉字<br />
+如⾃、⽣、向、千、久、
+丈、少、⻥、⾆、个、么等,可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211305220.png" alt="image-20240821130550183-inline" />表示。<br />
+4) 单独点与字根相连⽽成的汉字<br />
+如刃、义、太、勺、⽝、刃等,
+也可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211305070.jpg" alt="2024-08-21_13-05-03-inline" />表示。<br />
+5) 含“⾛之”的汉字
+如过、进、远、连、边等字可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211305067.jpg" alt="2024-08-21_13-05-09-inline" />表
+示。<br />
+6) 含两个或⼏个字根且两者相交的汉字<br />
+如丸、东、电、本、⽆、⾥
+等,可⽤图示<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211305057.jpg" alt="2024-08-21_13-05-15-inline" />表示。</p>
+  </li>
+</ol>
+
+<p>汉字字型命名以及相关内容⻅表1-3。
+<img src="https://picgo-hustnzj.oss-cn-shenzhen.aliyuncs.com/img/202408211234705.png" alt="image-20240821123429654" /></p>
+
+<p>综上所述,对汉字的字型可以归纳为以下两点:<br />
+▶属于“散”的汉字,才可以分为左右型或上下型。<br />
+▶属于“连、交”的汉字,⼀律视为杂合型。</p>
+
+<p>给汉字编码时,⽤数字“1、2、3”来代表汉字的字型特征是⾮常
+重要的。五笔字型输⼊法正是⽤它来增加编码数量以区分“重码”。所
+谓“重码”,就是⼀个汉字编码对应多个汉字。重码产⽣的主要原因就是
+编码信息不够,不⾜以把汉字⽤编码区分开来。</p>
+
+<p>实际上,在五笔字型中<strong>仅仅对于那些结构简单的汉字,即由2个或
+3个字根组成的字,才关⼼它的“字型”</strong>。因为当⼀个汉字由4个或4
+个以上的字根组成时,如照、攀、餐等,已经可以拆成许多个字根⽤于
+编码,其信息量已经⾜够多了,所以在编码时就不再需要考虑⽤字型信
+息来增加编码数量了。</p>
+
+<h2 id="解释下面的脚注">解释下面的脚注：</h2>
+<h2 id="解释下面的脚注-1">解释下面的脚注：</h2>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>“ASCII 字符”是美国信息交换标准代码中定义的字符，用于计算机等设备中的信息表示。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>“ASCII 编码”是一种将字符转换为数字的编码方式，用于在计算机中存储和传输信息。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>“计算机”是一种能够按照程序运行，自动、高速处理海量数据的现代化智能电子设备。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>“电子设备”是指由电子元件组成，能够实现特定功能的设备，计算机是其中一种常见的电子设备。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>“二进制”是一种计数系统，只使用 0 和 1 两个数字，计算机中的数据以二进制形式存储和处理。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>“人类语言”是人类用于交流和表达思想的语言，如汉语、英语等。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>“代码表”是一种将字符或信息转换为特定代码的表格，用于计算机与人类之间的信息交换。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:8" role="doc-endnote">
+      <p>“代码”是用特定的符号或数字表示信息的一种方式，计算机通过识别代码来处理信息。 <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:9" role="doc-endnote">
+      <p>“ASCII 码表”即美国信息交换标准代码表，用于将字符转换为数字编码。 <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:10" role="doc-endnote">
+      <p>“美国信息交换标准代码”是一种广泛使用的字符编码标准，定义了 128 个字符的编码。 <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:11" role="doc-endnote">
+      <p>“编码方法”是将信息转换为特定代码的方式，如 ASCII 编码、汉字输入法的编码等。 <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:12" role="doc-endnote">
+      <p>“信息编码”是将信息转换为代码的过程，以便计算机能够识别和处理。 <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:13" role="doc-endnote">
+      <p>“ASCII 码”是美国信息交换标准代码中的编码，用于表示字符。 <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:14" role="doc-endnote">
+      <p>“邮电局”是负责邮政和电信业务的机构，在早期曾使用电报码进行信息传输。 <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:15" role="doc-endnote">
+      <p>“电报”是一种通过电信网络传输文字信息的通信方式。 <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:16" role="doc-endnote">
+      <p>“电报码”是用于发送电报的编码方式，由数字组合构成汉字编码。 <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:17" role="doc-endnote">
+      <p>“十进制”是一种计数系统，使用 0 到 9 十个数字。 <a href="#fnref:17" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:18" role="doc-endnote">
+      <p>“编码”是将信息转换为特定代码的过程，电报码中的数字组合就是一种编码。 <a href="#fnref:18" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:19" role="doc-endnote">
+      <p>“PC”即个人计算机，是一种供个人使用的电子设备。 <a href="#fnref:19" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:20" role="doc-endnote">
+      <p>“音码”是汉字输入法的一种类型，通过汉字的读音进行编码输入。 <a href="#fnref:20" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:21" role="doc-endnote">
+      <p>“型码”是汉字输入法的一种类型，通过汉字的字形进行编码输入，如五笔输入法。 <a href="#fnref:21" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:22" role="doc-endnote">
+      <p>“国标码”即国家标准汉字编码，用于在计算机中表示汉字。 <a href="#fnref:22" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:23" role="doc-endnote">
+      <p>“区位码”是一种用数字对汉字进行编码的方式，将汉字分成区和位进行编码。 <a href="#fnref:23" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:24" role="doc-endnote">
+      <p>“取码”是从汉字的特征中选取特定的编码元素的过程。 <a href="#fnref:24" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:25" role="doc-endnote">
+      <p>“全拼”是一种汉字拼音输入法，输入汉字的完整拼音来输入汉字。 <a href="#fnref:25" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:26" role="doc-endnote">
+      <p>“简拼”是一种汉字拼音输入法，输入汉字拼音的首字母或部分字母来输入汉字。 <a href="#fnref:26" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:27" role="doc-endnote">
+      <p>“智能ABC”是一种汉字拼音输入法，具有智能组词等功能。 <a href="#fnref:27" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:28" role="doc-endnote">
+      <p>“表形码”是一种汉字输入法，根据汉字的字形进行编码。 <a href="#fnref:28" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:29" role="doc-endnote">
+      <p>“认识码”可能是一种根据特定规则对汉字进行编码以便识别的输入法编码方式。 <a href="#fnref:29" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:30" role="doc-endnote">
+      <p>“世纪形音码”是一种结合汉字字形和读音进行编码的输入法。 <a href="#fnref:30" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
 
 
@@ -1319,7 +1713,9 @@
         const a = document.createElement("a");
         a.href = `#${id}`;
         // 删除标题中的数字和拼音（但不包括非拼音的英文字母）
-        a.textContent = text.replace(/\d+/g, '').replace(/[a-zA-Zāáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜü\s]+/g, '');
+        
+          a.textContent = text
+        
         a.dataset.level = heading.tagName;
 
         const nextLevelHeadingTagName = `H${parseInt(heading.tagName.replace('H', '')) + 1}`;

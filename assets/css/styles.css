@@ -12140,6 +12140,10 @@ p img.hanzi_cannot_typed {
   width: 1rem;
 }
 
+li > p {
+  text-indent: 0;
+}
+
 strong {
   font-size: 1.2rem;
 }
@@ -12167,10 +12171,6 @@ h3,
 .poetry_title {
   margin-top: 6rem;
   margin-bottom: 2rem;
-}
-
-h3 {
-  text-align: center;
 }
 
 h2 {
@@ -12349,6 +12349,11 @@ p:has(> .poetry) {
 
 rt {
   font-size: 0.8em;
+}
+
+img[alt*=inline] {
+  width: 1.2rem;
+  display: inline;
 }
 
 /*# sourceMappingURL=styles.css.map */
