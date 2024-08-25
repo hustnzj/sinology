@@ -12212,6 +12212,9 @@ h4 {
   top: 0px;
 }
 
+#toc {
+  transition: visibility 0s, opacity 0.3s linear;
+}
 #toc ul {
   list-style: none;
   padding: 0;
@@ -12239,6 +12242,39 @@ h4 {
 }
 #toc.hidden {
   display: none;
+}
+
+.popover {
+  max-height: 100vh; /* 设置最大高度为视口高度的100% */
+  overflow-y: auto; /* 允许垂直方向滚动 */
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.popover ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.popover ul li {
+  margin: 5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.popover ul li a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #333;
+  padding: 0;
+}
+.popover ul li a:hover {
+  text-decoration: underline;
+}
+.popover ul li span {
+  font-size: 1rem;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 nav#menu {
@@ -12384,11 +12420,6 @@ img[alt*=inline] {
   position: absolute;
   top: 14px;
   right: 0;
-}
-
-/* 悬浮显示 toc 菜单 */
-#toc {
-  transition: visibility 0s, opacity 0.3s linear;
 }
 
 /*# sourceMappingURL=styles.css.map */
