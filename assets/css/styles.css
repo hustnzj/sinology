@@ -12237,6 +12237,9 @@ h4 {
   margin-right: 5px;
   cursor: pointer;
 }
+#toc.hidden {
+  display: none;
+}
 
 nav#menu {
   position: sticky;
@@ -12354,6 +12357,38 @@ rt {
 img[alt*=inline] {
   width: 1.2rem;
   display: inline;
+}
+
+.flowerBorder {
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.flowerBorder::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #ff69b4, #ffb6c1, #ffdab9, #d2b48c, #90ee90, #6495ed, #ff69b4) 30;
+  border-radius: 5px;
+}
+
+#toggle-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 0;
+}
+
+/* 悬浮显示 toc 菜单 */
+#toc {
+  transition: visibility 0s, opacity 0.3s linear;
 }
 
 /*# sourceMappingURL=styles.css.map */
