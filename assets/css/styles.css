@@ -12422,4 +12422,9 @@ img[alt*=inline] {
   right: 0;
 }
 
+sup + sup.alternative::before {
+  content: "/";
+  color: green;
+}
+
 /*# sourceMappingURL=styles.css.map */
