@@ -12097,16 +12097,19 @@ textarea.form-control-lg {
   }
 }
 
-.current {
-  color: green;
-}
-
 body {
-  background-color: rgb(229, 232, 232);
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+}
+
+.current {
+  color: green;
+}
+
+span.black-dot::after {
+  color: black;
 }
 
 a:hover {
@@ -12152,7 +12155,6 @@ blockquote {
   border-left: 4px solid #ccc;
   padding: 10px;
   margin: 10px 0;
-  background-color: #f9f9f9;
 }
 
 img {
@@ -12190,7 +12192,6 @@ h4 {
 .container {
   display: flex;
   flex-wrap: wrap;
-  background-color: #ffffff;
   padding: 0 20px 20px 0;
   border-radius: 5px;
   margin: 0 20px 20px;
@@ -12205,7 +12206,6 @@ h4 {
 #sidebar {
   max-height: 100vh;
   overflow-y: auto;
-  background-color: #f7f7f7;
   border-right: 1px solid #ccc;
   padding: 10px 30px 10px 10px;
   position: sticky;
@@ -12229,7 +12229,6 @@ h4 {
 #toc a {
   font-size: 1rem;
   text-decoration: none;
-  color: #333;
   padding: 0;
 }
 #toc a:hover {
@@ -12247,7 +12246,6 @@ h4 {
 .popover {
   max-height: 100vh; /* 设置最大高度为视口高度的100% */
   overflow-y: auto; /* 允许垂直方向滚动 */
-  background-color: #f7f7f7;
   border: 1px solid #ccc;
   padding: 10px;
 }
@@ -12265,7 +12263,6 @@ h4 {
 .popover ul li a {
   font-size: 1rem;
   text-decoration: none;
-  color: #333;
   padding: 0;
 }
 .popover ul li a:hover {
@@ -12283,7 +12280,6 @@ nav#menu {
   left: 0;
   width: calc(100% + 40px); /* 20px 为 .content 的 margin-left 值 */
   margin-left: -20px;
-  background-color: #f7f7f7;
   z-index: 12;
 }
 nav#menu ul {
@@ -12309,8 +12305,6 @@ nav#menu ul li a {
 nav#menu ul li ul {
   display: none;
   position: absolute;
-  background-color: #fff;
-  border: 1px solid #ccc;
   padding: 0;
   list-style: none;
   left: 0;
@@ -12323,9 +12317,6 @@ nav#menu ul li ul li a {
   padding: 10px 15px;
   white-space: nowrap;
 }
-nav#menu ul li ul li:hover {
-  background-color: #f0f0f0;
-}
 nav#menu ul li ul li ul {
   left: 100%;
   top: 0;
@@ -12336,12 +12327,10 @@ nav#menu ul li ul li ul {
   top: 85px;
   width: calc(100% + 40px); /* 20px 为 .content 的 margin-left 值 */
   margin-left: -20px;
-  background-color: #f7f7f7;
   z-index: 1;
 }
 
 .breadcrumb {
-  background-color: transparent;
   padding: 10px;
 }
 
@@ -12368,7 +12357,6 @@ span.black-dot::after {
   left: 50%;
   transform: translateX(-50%);
   font-size: 1rem;
-  color: black;
 }
 
 p:has(> .poetry_title),
@@ -12425,6 +12413,31 @@ img[alt*=inline] {
 sup + sup.alternative::before {
   content: "/";
   color: green;
+}
+
+@media (prefers-color-scheme: light) {
+  nav#menu, nav#breadcrumbs {
+    background-color: #fefefe; /* 示例：深色背景 */
+  }
+  nav#menu ul li ul {
+    background-color: #ececec;
+    border: 1px solid #00c3ff;
+  }
+  nav#menu ul li ul li:hover {
+    background-color: #dadada;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  nav#menu, nav#breadcrumbs {
+    background-color: #1e1e1e; /* 示例：深色背景 */
+  }
+  nav#menu ul li ul {
+    background-color: #1e1e1e;
+    border: 1px solid #00c3ff;
+  }
+  nav#menu ul li ul li:hover {
+    background-color: #dadada;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
