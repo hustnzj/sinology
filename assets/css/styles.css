@@ -12202,6 +12202,9 @@ h4 {
   flex: 1;
   margin-left: 20px;
 }
+.content p img {
+  margin: 0 auto;
+}
 
 #sidebar {
   max-height: 100vh;
@@ -12438,6 +12441,17 @@ sup + sup.alternative::before {
   nav#menu ul li ul li:hover {
     background-color: #dadada;
   }
+}
+.img-container {
+  height: 200px; /* 固定图片容器的高度 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* 超出容器的部分隐藏 */
+}
+.img-container img {
+  height: 100%;
+  width: auto; /* 保持图片长宽比，优先高度适应容器 */
 }
 
 /*# sourceMappingURL=styles.css.map */
