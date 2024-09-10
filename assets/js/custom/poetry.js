@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function generateRubyHTML(lines) {
     let htmlOutput = '';
     // 中文标点
-    const chinesePunStr = "，。！？；：（）《》“”‘’";
+    const chinesePunStr = "，。！？；：（）《》“”‘’——·";
     const chinesePunRegex = new RegExp(`[${chinesePunStr}]`, 'g');
     // const chinesePunRegex = /[\u3000-\u303F\uFF00-\uFFEF]/g;
     // sup 脚注
