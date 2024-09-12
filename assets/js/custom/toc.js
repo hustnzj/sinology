@@ -221,6 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  toc.classList.toggle("hidden"); // 切换隐藏和显示的状态
+
   // 切换侧边目录显示状态
   toggleIcon.addEventListener("click", function () {
     toc.classList.toggle("hidden"); // 切换隐藏和显示的状态

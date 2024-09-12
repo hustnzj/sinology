@@ -12375,6 +12375,7 @@ p:has(> .poetry) {
   display: inline-block;
   white-space: normal; /* 允许内容换行，这个非常关键，否则会造成.content 的宽度是一个固定值 */
   width: 100%;
+  text-align: center;
 }
 
 rt {
@@ -12452,6 +12453,34 @@ sup + sup.alternative::before {
 .img-container img {
   height: 100%;
   width: auto; /* 保持图片长宽比，优先高度适应容器 */
+}
+
+@media (min-width: 576px) {
+  .img-container-1 {
+    height: 300px;
+  }
+  .img-container-2 {
+    height: 200px;
+  }
+}
+@media (min-width: 768px) {
+  .img-container-1 {
+    height: 400px;
+  }
+  .img-container-2 {
+    height: 350px;
+  }
+  .img-container-3 {
+    height: 250px;
+  }
+  .img-container-4 {
+    height: 200px;
+  }
+}
+@media (max-width: 575.99px) {
+  .img-container-1 {
+    height: 200px; /* 固定高度 */
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
