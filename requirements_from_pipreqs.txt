@@ -1,0 +1,11 @@
+beautifulsoup4==4.12.3
+braceexpand==0.1.7
+markdownify==0.13.1
+pandocfilters==1.5.1
+pdfplumber==0.11.4
+# Pillow==9.5.0
+Pillow==10.4.0
+pyperclip==1.8.2
+pypinyin==0.51.0
+# PyYAML==5.4.1
+PyYAML==6.0.2
