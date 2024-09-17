@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
           continue; // 跳过 #，不需要添加到 rubyHTML
-        } 
+        }
 
         if (segment.startsWith("<sup")) {
           // 如果 segment 是 sup 标签表示的脚注，则直接添加到 rubyHTML
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           // 否则，添加拼音和汉字
           let pinyinSegment = pinyinSegments[pinyinIndex] || ""; // 处理可能不存在的拼音段
-          let classAttr = isWavy ? ' class="wavylines"' : ''; // 如果在 ## 包裹中，添加 class 属性
+          let classAttr = isWavy ? ' class="wavylines"' : ""; // 如果在 ## 包裹中，添加 class 属性
           rubyHTML += `<ruby${classAttr}><a href="https://dict.baidu.com/s?wd=${segment}" target="_blank">${segment}</a><rt> ${pinyinSegment} </rt></ruby>`; //并添加上百度汉语的超链接
           pinyinIndex++; // 递增拼音索引
         }
@@ -108,9 +108,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // 判断是否是标题
       if (rubyHTML.startsWith("<ruby>《")) {
-        htmlOutput += `<h3><span class="poetry">${rubyHTML}</span></h3><p ><span class="poetry text-muted">本诗有 ${countChineseCharacters(
-          lines
-        )} 个字</span></p>`;
+        htmlOutput += `<h3><span class="poetry">${rubyHTML}</span></h3>`;
+        if (lines.length > 4) {
+          htmlOutput += `<p ><span class="poetry text-muted">本诗有 ${countChineseCharacters(
+            lines
+          )} 个字</span></p>`;
+        }
       } else {
         htmlOutput += `<p><span class="poetry">${rubyHTML}</span></p>`;
       }

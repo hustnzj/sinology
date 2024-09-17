@@ -12108,10 +12108,6 @@ body {
   color: green;
 }
 
-span.black-dot::after {
-  color: black;
-}
-
 a:hover {
   color: #007bff;
   text-decoration: underline;

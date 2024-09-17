@@ -8,6 +8,7 @@ setup(
                 '_py.convert_footnotes',
                 '_py.word_pinyin',
                 '_py.poetry_pinyin',
+                '_py.batch_rename_png',
                 ],
     entry_points={
         'console_scripts': [
@@ -16,6 +17,7 @@ setup(
             'ask_footnotes = _py.convert_footnotes:main',
             'word_pinyin = _py.word_pinyin:main',
             'poetry_pinyin = _py.poetry_pinyin:main',
+            'rename_png = _py.batch_rename_png:main',
         ],
     },
     install_requires=[
