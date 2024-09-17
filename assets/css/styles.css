@@ -12122,6 +12122,7 @@ a {
 
 p {
   text-indent: 2rem;
+  line-height: 2;
 }
 p {
   font-size: 1rem;
@@ -12430,6 +12431,12 @@ sup + sup.alternative::before {
   nav#menu ul li ul li:hover {
     background-color: #dadada;
   }
+  a.footnote {
+    color: green;
+  }
+  .wavylines {
+    text-decoration-color: rgb(0, 8, 255);
+  }
 }
 @media (prefers-color-scheme: dark) {
   nav#menu, nav#breadcrumbs {
@@ -12441,6 +12448,12 @@ sup + sup.alternative::before {
   }
   nav#menu ul li ul li:hover {
     background-color: #dadada;
+  }
+  a.footnote {
+    color: greenyellow;
+  }
+  .wavylines {
+    text-decoration-color: yellow;
   }
 }
 .img-container {
@@ -12481,6 +12494,11 @@ sup + sup.alternative::before {
   .img-container-1 {
     height: 200px; /* 固定高度 */
   }
+}
+.wavylines {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1.1px;
 }
 
 /*# sourceMappingURL=styles.css.map */
