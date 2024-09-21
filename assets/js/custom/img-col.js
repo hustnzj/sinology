@@ -72,12 +72,15 @@ document.addEventListener("DOMContentLoaded", function () {
         imgs.forEach((img) => {
           const title = img.alt;
 
+          // 克隆 img 元素以保留所有属性，包括 loading="lazy"
+          const clonedImg = img.cloneNode(true);
+
           // 创建每一个 col
           html += `
                    <div class="${colClass}">
                        <div class="card">
                            <div class="card-img-top img-container ${imgContainerClass}" >
-                               <img src="${img.src}" alt="${title}" />
+                              ${clonedImg.outerHTML}
                            </div>
                            <div class="card-body">
                                <h5 class="card-title text-center">${title}</h5>
