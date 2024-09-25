@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (rubyHTML.startsWith("<ruby>《")) {
         htmlOutput += `<h3><span class="poetry">${rubyHTML}</span></h3>`;
         if (lines.length > 4) {
-          htmlOutput += `<p ><span class="poetry text-muted">本诗有 ${countChineseCharacters(
+          htmlOutput += `<p ><span class="poetry text-muted">本诗/词有 ${countChineseCharacters(
             lines
           )} 个字</span></p>`;
         }

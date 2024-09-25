@@ -12417,7 +12417,11 @@ sup + sup.alternative::before {
 }
 
 @media (prefers-color-scheme: light) {
-  nav#menu, nav#breadcrumbs {
+  details div {
+    background-color: #f8ff2b;
+  }
+  nav#menu,
+  nav#breadcrumbs {
     background-color: #fefefe; /* 示例：深色背景 */
   }
   nav#menu ul li ul {
@@ -12435,7 +12439,11 @@ sup + sup.alternative::before {
   }
 }
 @media (prefers-color-scheme: dark) {
-  nav#menu, nav#breadcrumbs {
+  details div {
+    background-color: #121e82;
+  }
+  nav#menu,
+  nav#breadcrumbs {
     background-color: #1e1e1e; /* 示例：深色背景 */
   }
   nav#menu ul li ul {
@@ -12495,6 +12503,20 @@ sup + sup.alternative::before {
   text-decoration-line: underline;
   text-decoration-style: wavy;
   text-decoration-thickness: 1.1px;
+}
+
+details {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+}
+details .content {
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-left: 2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s linear;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
