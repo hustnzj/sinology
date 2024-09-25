@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
    */
   contentArea.innerHTML = contentArea.innerHTML
     .replace(
-      /<p>@ details (.*?) @<\/p>/g,
+      /<p>@\s*details\s*(.*?)\s*@<\/p>/g,
       '<details>\n  <summary>$1</summary>\n  <div class="content">'
     )
-    .replace(/<p>@ enddetails @<\/p>/g, "  </div>\n</details>");
+    .replace(/<p>@\s*enddetails\s*(.*?)*\s*@<\/p>/g, "  </div>\n</details>");
 });
