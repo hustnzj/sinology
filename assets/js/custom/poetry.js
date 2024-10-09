@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function generateRubyHTML(lines) {
+    console.log(lines)
     let htmlOutput = "";
     // 中文标点
     const chinesePunStr = "，。！？；：（）《》“”‘’——·";
@@ -46,8 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // 依次遍历拼音行和汉字行
     for (let i = 0; i < lines.length; i += 2) {
       const pinyinLine = lines[i].trim();
-      const chineseLine = lines[i + 1].trim();
-
+      let chineseLine = lines[i + 1].trim();
+      const regex = /<span class="wavylines">(.*?)<\/span>/g; 
+      chineseLine = chineseLine.replace(regex, '##$1##'); // 这里是为了纠正 custom_filter.rb 中的wavylines过滤器
       // 生成 ruby, rt 标签
       let rubyHTML = "";
 
