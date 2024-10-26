@@ -12519,4 +12519,32 @@ details .content {
   font-size: 1rem;
 }
 
+.partOfSpeech {
+  color: #fff;
+  background-color: #6b0000;
+  border-radius: 4px;
+  padding: 2px;
+  font-size: 100%;
+  line-height: 1;
+}
+
+.tooltip-inner {
+  max-width: 50vw !important;
+  white-space: normal !important;
+  max-height: 80vh; /* 设置最大高度 */
+  overflow-y: auto; /* 内容过多时添加滚动条 */
+  text-align: left;
+}
+.tooltip-inner p {
+  padding-top: 0.5rem;
+  padding-right: 2rem;
+}
+.tooltip-inner span.text-left {
+  display: block; /* 保持紧凑，同时应用块状布局 */
+  text-align: left; /* 水平居左 */
+  margin: 0; /* 移除默认的外边距 */
+  padding: 0; /* 移除默认的内边距 */
+  line-height: 1.2;
+}
+
 /*# sourceMappingURL=styles.css.map */
