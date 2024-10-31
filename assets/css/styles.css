@@ -12537,7 +12537,7 @@ details .content {
 }
 .tooltip-inner p {
   padding-top: 0.5rem;
-  padding-right: 2rem;
+  line-height: initial;
 }
 .tooltip-inner span.text-left {
   display: block; /* 保持紧凑，同时应用块状布局 */
@@ -12545,6 +12545,24 @@ details .content {
   margin: 0; /* 移除默认的外边距 */
   padding: 0; /* 移除默认的内边距 */
   line-height: 1.2;
+}
+.tooltip-inner .wordTitle {
+  font-size: 2rem;
+}
+.tooltip-inner .lemmaTitle {
+  font-size: 1.5rem;
+}
+.tooltip-inner .lemmaPinyin {
+  font-size: 1.2rem;
+}
+.tooltip-inner .lemmaDesc {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.tooltip-inner .dict_name {
+  display: inline-flex; /* 使用 flex 以实现子元素的对齐 */
+  align-items: center; /* 垂直居中对齐子元素 */
+  margin-bottom: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

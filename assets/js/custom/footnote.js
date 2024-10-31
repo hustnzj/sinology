@@ -9,9 +9,47 @@ document.addEventListener("DOMContentLoaded", function () {
     var targetElement = document.querySelector(escapedId);
     if (targetElement) {
       var htmlContent = targetElement.innerHTML.replace("↩", "").trim();
+      // 处理 htmlContent
+      // 1. 移除 <p> 标签
+      htmlContent = htmlContent.replace(/<p>/g, '').replace(/<\/p>/g, '');
+
+      // 2. 用 <br> 标签分隔内容
+      var contentParts = htmlContent.split(/<br\s*\/?>/i);
+      var title = contentParts[0].replace(':', '').trim(); // 第一项为 title
+
+      // 3. 解析 contentParts[1] 中的特殊标记内容
+      var dict_name = (contentParts[1].match(/《(.*?)》/) || [])[1] || ''; // 《》内的内容
+      var type_name = (contentParts[1].match(/【(.*?)】/) || [])[1] || ''; // 【】内的内容
+      var pinyin = (contentParts[1].match(/\[(.*?)\]/) || [])[1] || ''; // []内的内容
+
+      const dictNameMapping = {
+        '百度百科': 'baidu_baike',
+        '百度汉语': 'baidu_hanyu',
+        '国语辞典': 'moe_tw',
+        '汉典': 'zdic'
+      };
+      
+      const dict_class_name = dictNameMapping[dict_name] || '';
+
+      // 4. 使用解析出的内容生成 HTML
+      var secondPartHtml = `
+        <div class="dict_name ${dict_class_name}">${dict_name}</div>
+
+        <div class="lemmaTitleBox">
+          <span class="lemmaTitle">${title}</span>
+          <span class="lemmaPinyin">[${pinyin}]</span>
+        </div>
+        <div class="lemmaDesc">${type_name}</div>
+      `;
+
+      // 5. 组合 contentParts[2] 开始的其余内容
+      var content = contentParts.slice(2).map(part => `<p>${part.trim()}</p>`).join('');
+
+      // 6. 将 title、secondPartHtml 和 content 组合成最终的 htmlContent
+      htmlContent = `<div class="text-center wordTitle">${title}</div>${secondPartHtml}${content}`;
       tooltipElement.setAttribute("data-bs-html", "true");
       tooltipElement.setAttribute("title", htmlContent);
-
+      
       var tooltip = new bootstrap.Tooltip(tooltipElement, { trigger: 'manual', html: true });
 
       // 鼠标移到 tooltipElement 上显示 tooltip
