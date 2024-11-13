@@ -8,49 +8,64 @@ document.addEventListener("DOMContentLoaded", function () {
     var escapedId = targetId.replace(/(:|\.|\[|\]|,|=|@)/g, "\\$1");
     var targetElement = document.querySelector(escapedId);
     if (targetElement) {
-      var htmlContent = targetElement.innerHTML.replace("↩", "").trim();
-      // 处理 htmlContent
-      // 1. 移除 <p> 标签
-      htmlContent = htmlContent.replace(/<p>/g, '').replace(/<\/p>/g, '');
+      // 获取并解析 JSON 数据
+      let rawContent = targetElement.innerHTML.replace("↩", "").trim();
+      rawContent = rawContent.replace(/&nbsp;<a.*<\/a>/, "").replace(/<p>|<\/p>/g, '').replace(/<code>|<\/code>/g, ''); // 去除末尾链接部分
+      let dataObj = JSON.parse(rawContent);
 
-      // 2. 用 <br> 标签分隔内容
-      var contentParts = htmlContent.split(/<br\s*\/?>/i);
-      var title = contentParts[0].replace(':', '').trim(); // 第一项为 title
+      // 标题
+      const title = dataObj.wd || "词条";
 
-      // 3. 解析 contentParts[1] 中的特殊标记内容
-      var dict_name = (contentParts[1].match(/《(.*?)》/) || [])[1] || ''; // 《》内的内容
-      var type_name = (contentParts[1].match(/【(.*?)】/) || [])[1] || ''; // 【】内的内容
-      var pinyin = (contentParts[1].match(/\[(.*?)\]/) || [])[1] || ''; // []内的内容
+      // 网站字典名称和链接
+      const dictNames = dataObj.dict_names || [];
+      const spiderUrls = dataObj.spider_urls || [];
 
-      const dictNameMapping = {
-        '百度百科': 'baidu_baike',
-        '百度汉语': 'baidu_hanyu',
-        '国语辞典': 'moe_tw',
-        '汉典': 'zdic'
+      // 图标字典，用于映射 dict_names 到图标
+      const dictIconMapping = {
+        'Zdic': '📖', // 可替换为真实的图标路径
+        'BaiduHanyu': '🔍',
+        'MoeTw': '📚'
       };
-      
-      const dict_class_name = dictNameMapping[dict_name] || '';
 
-      // 4. 使用解析出的内容生成 HTML
-      var secondPartHtml = `
-        <div class="dict_name ${dict_class_name}">${dict_name}</div>
+      // 解释数据
+      const explanationsData = dataObj.data || {};
 
-        <div class="lemmaTitleBox">
-          <span class="lemmaTitle">${title}</span>
-          <span class="lemmaPinyin">[${pinyin}]</span>
-        </div>
-        <div class="lemmaDesc">${type_name}</div>
-      `;
+      // 构建 HTML 结构
+      let htmlContent = `<div class="text-center wordTitle">${title}</div>`;
 
-      // 5. 组合 contentParts[2] 开始的其余内容
-      var content = contentParts.slice(2).map(part => `<p>${part.trim()}</p>`).join('');
+      // 添加字典图标和链接
+      htmlContent += `<div class="dict-icons">`;
+      dictNames.forEach((dictName, index) => {
+        const icon = dictIconMapping[dictName] || '📚';
+        const url = spiderUrls[index] || '#';
+        htmlContent += `
+          <a href="${url}" target="_blank" class="dict-icon" title="${dictName}">
+            <span class="icon">${icon}</span>
+          </a>
+        `;
+      });
+      htmlContent += `</div>`;
 
-      // 6. 将 title、secondPartHtml 和 content 组合成最终的 htmlContent
-      htmlContent = `<div class="text-center wordTitle">${title}</div>${secondPartHtml}${content}`;
+      // 解释展示
+      htmlContent += `<div class="explanations">`;
+      Object.keys(explanationsData).forEach(pinyin => {
+        const meanings = explanationsData[pinyin];
+        htmlContent += `
+          <div class="pinyin-section">
+            <div class="pinyin-title">[${pinyin}]</div>
+            <ul class="meaning-list">
+              ${meanings.map(meaning => `<li>${meaning}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+      });
+      htmlContent += `</div>`;
+
+      // 设置 Bootstrap Tooltip
       tooltipElement.setAttribute("data-bs-html", "true");
       tooltipElement.setAttribute("title", htmlContent);
-      
-      var tooltip = new bootstrap.Tooltip(tooltipElement, { trigger: 'manual', html: true });
+
+      let tooltip = new bootstrap.Tooltip(tooltipElement, { trigger: 'manual', html: true });
 
       // 鼠标移到 tooltipElement 上显示 tooltip
       tooltipElement.addEventListener('mouseenter', function () {

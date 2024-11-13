@@ -12530,13 +12530,14 @@ details .content {
 
 .tooltip-inner {
   max-width: 50vw !important;
+  min-width: 15vw;
   white-space: normal !important;
   max-height: 80vh; /* 设置最大高度 */
   overflow-y: auto; /* 内容过多时添加滚动条 */
   text-align: left;
+  padding: 1rem 0;
 }
 .tooltip-inner p {
-  padding-top: 0.5rem;
   line-height: initial;
 }
 .tooltip-inner span.text-left {
@@ -12548,6 +12549,9 @@ details .content {
 }
 .tooltip-inner .wordTitle {
   font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 1px solid red; /* 这里设置了一个1像素宽的黑色实线边框作为下划线，你可以根据需要修改颜色、宽度等样式 */
+  margin-bottom: 1rem;
 }
 .tooltip-inner .lemmaTitle {
   font-size: 1.5rem;
@@ -12557,12 +12561,53 @@ details .content {
 }
 .tooltip-inner .lemmaDesc {
   font-size: 1rem;
-  margin-bottom: 1rem;
+}
+.tooltip-inner .lemmaMeanings {
+  margin-top: 1rem;
 }
 .tooltip-inner .dict_name {
   display: inline-flex; /* 使用 flex 以实现子元素的对齐 */
   align-items: center; /* 垂直居中对齐子元素 */
   margin-bottom: 1rem;
+}
+.tooltip-inner .dict_box {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+.tooltip-inner .dict-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.tooltip-inner .dict-icon {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5em;
+}
+.tooltip-inner .dict-icon:hover {
+  color: #007bff;
+}
+.tooltip-inner .explanations {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.tooltip-inner .pinyin-section {
+  margin: 1rem;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+.tooltip-inner .pinyin-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.tooltip-inner .meaning-list {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+.tooltip-inner .meaning-list li {
+  margin-bottom: 5px;
 }
 
 /*# sourceMappingURL=styles.css.map */

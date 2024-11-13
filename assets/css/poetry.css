@@ -2,13 +2,20 @@ h3 {
   text-align: center;
 }
 
-.tooltip-inner .baidu_baike::before {
+.tooltip-inner .dict_name::before {
   content: ""; /* 设置为空，因为只使用背景图 */
-  background-image: url('../img/favicon-baidu.ico'); /* 因为 scss 文件无法解析Liquid 模板标签，所以只能放在 css 或 HTML 文件中。*/
   background-size: 1.2rem 1.2rem; /* 调整图标大小 */
   background-repeat: no-repeat;
   display: inline-block;
   width: 1.2rem; /* 设置宽度 */
   height: 1.2rem; /* 设置高度 */
   margin-right: 5px;
+}
+
+.tooltip-inner .baidu_baike::before {
+  background-image: url('../img/favicon-baidu.ico'); /* 因为 scss 文件无法解析Liquid 模板标签，所以只能放在 css 或 HTML 文件中。*/
+}
+
+.tooltip-inner .zdic::before {
+  background-image: url('../img/favicon-zdic.ico'); /* 因为 scss 文件无法解析Liquid 模板标签，所以只能放在 css 或 HTML 文件中。*/
 }
