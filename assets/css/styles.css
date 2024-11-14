@@ -12577,6 +12577,7 @@ details .content {
 .tooltip-inner .dict-icons {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   margin-bottom: 15px;
 }
@@ -12589,7 +12590,7 @@ details .content {
   color: #007bff;
 }
 .tooltip-inner .explanations {
-  max-height: 300px;
+  max-height: 60vh;
   overflow-y: auto;
 }
 .tooltip-inner .pinyin-section {
@@ -12608,6 +12609,10 @@ details .content {
 }
 .tooltip-inner .meaning-list li {
   margin-bottom: 5px;
+}
+
+.tooltip {
+  opacity: 1 !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

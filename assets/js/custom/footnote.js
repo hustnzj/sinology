@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // 图标字典，用于映射 dict_names 到图标
       const dictIconMapping = {
-        'Zdic': '📖', // 可替换为真实的图标路径
-        'BaiduHanyu': '🔍',
+        'zdic': '📖', // 可替换为真实的图标路径
+        'baidu_hanyu': '🔍',
         'MoeTw': '📚'
       };
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let htmlContent = `<div class="text-center wordTitle">${title}</div>`;
 
       // 添加字典图标和链接
-      htmlContent += `<div class="dict-icons">`;
+      htmlContent += `<div class="dict-icons"><span>搜索来源：</span>`;
       dictNames.forEach((dictName, index) => {
         const icon = dictIconMapping[dictName] || '📚';
         const url = spiderUrls[index] || '#';
