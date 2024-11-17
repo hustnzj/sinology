@@ -54,7 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="pinyin-section">
             <div class="pinyin-title">[${pinyin}]</div>
             <ul class="meaning-list">
-              ${meanings.map(meaning => `<li>${meaning}</li>`).join('')}
+              ${meanings.map(meaning => {
+                // 使用正则检测并替换 a 标签（因为，HTML 标准中，<li> 标签本身可以包含超链接 <a>，但如果浏览器或某些渲染环境存在限制（尤其是在 Bootstrap Tooltip 这种组件中），会导致嵌套的 <a> 标签被转义，显示为纯文本。）
+                meaning = meaning.replace(/&lt;a(.*?)&gt;/g, "<a$1 target='_blank'>");
+                meaning = meaning.replace(/&lt;\/a&gt;/g, "</a>");
+                return `<li>${meaning}</li>`;
+              }).join('')}
             </ul>
           </div>
         `;
@@ -63,9 +68,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // 设置 Bootstrap Tooltip
       tooltipElement.setAttribute("data-bs-html", "true");
-      tooltipElement.setAttribute("title", htmlContent);
+      // tooltipElement.setAttribute("title", htmlContent);
+      // tooltipElement.setAttribute("data-bs-title", htmlContent);
+      tooltipElement.dataset.tooltipContent = htmlContent; // 使用 dataset 存储 HTML 内容
 
-      let tooltip = new bootstrap.Tooltip(tooltipElement, { trigger: 'manual', html: true });
+      tooltipElement.removeAttribute("title");
+
+      let tooltip = new bootstrap.Tooltip(tooltipElement, { 
+        trigger: 'manual', 
+        html: true,
+        title: function(){
+          return tooltipElement.dataset.tooltipContent
+        }
+      });
 
       // 鼠标移到 tooltipElement 上显示 tooltip
       tooltipElement.addEventListener('mouseenter', function () {
@@ -90,7 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 点击空白区域时隐藏所有 tooltip
     document.addEventListener('click', function (e) {
-      if (!tooltipElement.contains(e.target) && activeTooltip) {
+      // 获取 tooltip 的 DOM 节点
+      const tooltipNode = document.querySelector('.tooltip.show'); // `.tooltip.show` 
+      if (!tooltipElement.contains(e.target) && !tooltipNode.contains(e.target) && activeTooltip) {
         activeTooltip.hide();
         activeTooltip = null; // 清空激活的tooltip
       }
