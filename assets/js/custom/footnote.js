@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const dictIconMapping = {
         'zdic': '📖', // 可替换为真实的图标路径
         'baidu_hanyu': '🔍',
-        'MoeTw': '📚'
+        'moe': '📚'
       };
 
       // 解释数据
@@ -33,13 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
       // 构建 HTML 结构
       let htmlContent = `<div class="text-center wordTitle">${title}</div>`;
 
-      // 添加字典图标和链接
+      // 添加字典图标和链接，根据 spiderUrls 循环匹配图标
       htmlContent += `<div class="dict-icons"><span>搜索来源：</span>`;
-      dictNames.forEach((dictName, index) => {
-        const icon = dictIconMapping[dictName] || '📚';
-        const url = spiderUrls[index] || '#';
+      spiderUrls.forEach((url) => {
+        // 查找 url 中包含的字典名称
+        let matchedDictName = Object.keys(dictIconMapping).find(dictName => url.includes(dictName));
+        const icon = dictIconMapping[matchedDictName] || '📚'; // 默认图标为 📚
+
+        // 添加链接和图标
         htmlContent += `
-          <a href="${url}" target="_blank" class="dict-icon" title="${dictName}">
+          <a href="${url}" target="_blank" class="dict-icon" title="${matchedDictName || '其他'}">
             <span class="icon">${icon}</span>
           </a>
         `;
