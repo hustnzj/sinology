@@ -16,10 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // 标题
       const title = dataObj.wd || "词条";
 
-      // 网站字典名称和链接
-      const dictNames = dataObj.dict_names || [];
-      const spiderUrls = dataObj.spider_urls || [];
-
       // 图标字典，用于映射 dict_names 到图标
       const dictIconMapping = {
         'zdic': '📖', // 可替换为真实的图标路径
@@ -27,62 +23,55 @@ document.addEventListener("DOMContentLoaded", function () {
         'moe': '📚'
       };
 
-      // 解释数据
-      const explanationsData = dataObj.data || {};
-
       // 构建 HTML 结构
       let htmlContent = `<div class="text-center wordTitle">${title}</div>`;
 
-      // 添加字典图标和链接，根据 spiderUrls 循环匹配图标
-      htmlContent += `<div class="dict-icons"><span>搜索来源：</span>`;
-      spiderUrls.forEach((url) => {
-        // 查找 url 中包含的字典名称
-        let matchedDictName = Object.keys(dictIconMapping).find(dictName => url.includes(dictName));
-        const icon = dictIconMapping[matchedDictName] || '📚'; // 默认图标为 📚
+      // 遍历 sources 数据
+      dataObj.sources.forEach(source => {
+        const dictName = source.dict_name;
+        const spiderUrls = source.spider_url || [];
+        const explanationsData = source.data || {};
 
-        // 添加链接和图标
-        htmlContent += `
-          <a href="${url}" target="_blank" class="dict-icon" title="${matchedDictName || '其他'}">
-            <span class="icon">${icon}</span>
-          </a>
-        `;
+        // 添加字典标题和图标
+        const icon = dictIconMapping[dictName] || '📚';
+        
+        // 添加字典的链接
+        htmlContent += `<div class="dict-icons"><span>来源：</span>`;
+        spiderUrls.forEach((url) => {
+          // 添加链接和图标
+          htmlContent += `
+            <a href="${url}" target="_blank" class="dict-icon" title="${dictName || '其他'}">
+              <span class="icon">${icon}</span>
+            </a>
+          `;
+        });
+        htmlContent += `</div>`;
+
+        // 解释展示
+        htmlContent += `<div class="explanations">`;
+        Object.keys(explanationsData).forEach(pinyin => {
+          const meanings = explanationsData[pinyin];
+          htmlContent += `
+            <div class="pinyin-section">
+              <div class="pinyin-title">[${pinyin}]</div>
+              <ul class="meaning-list">
+                ${meanings.map(meaning => {
+                  // 使用正则检测并替换 a 标签（因为，HTML 标准中，<li> 标签本身可以包含超链接 <a>，但如果浏览器或某些渲染环境存在限制（尤其是在 Bootstrap Tooltip 这种组件中），会导致嵌套的 <a> 标签被转义，显示为纯文本。）
+                  meaning = meaning.replace(/&lt;a(.*?)&gt;/g, "<a$1 target='_blank'>");
+                  meaning = meaning.replace(/&lt;\/a&gt;/g, "</a>");
+                  return `<li>${meaning}</li>`;
+                }).join('')}
+              </ul>
+            </div>
+          `;
+        });
+        htmlContent += `</div>`; // 结束字典解释部分
       });
-      htmlContent += `</div>`;
-
-      // 解释展示
-      htmlContent += `<div class="explanations">`;
-      Object.keys(explanationsData).forEach(pinyin => {
-        const meanings = explanationsData[pinyin];
-        htmlContent += `
-          <div class="pinyin-section">
-            <div class="pinyin-title">[${pinyin}]</div>
-            <ul class="meaning-list">
-              ${meanings.map(meaning => {
-                // 使用正则检测并替换 a 标签（因为，HTML 标准中，<li> 标签本身可以包含超链接 <a>，但如果浏览器或某些渲染环境存在限制（尤其是在 Bootstrap Tooltip 这种组件中），会导致嵌套的 <a> 标签被转义，显示为纯文本。）
-                meaning = meaning.replace(/&lt;a(.*?)&gt;/g, "<a$1 target='_blank'>");
-                meaning = meaning.replace(/&lt;\/a&gt;/g, "</a>");
-                return `<li>${meaning}</li>`;
-              }).join('')}
-            </ul>
-          </div>
-        `;
-      });
-      htmlContent += `</div>`;
-
-      // 设置 Bootstrap Tooltip
-      tooltipElement.setAttribute("data-bs-html", "true");
-      // tooltipElement.setAttribute("title", htmlContent);
-      // tooltipElement.setAttribute("data-bs-title", htmlContent);
-      tooltipElement.dataset.tooltipContent = htmlContent; // 使用 dataset 存储 HTML 内容
-
-      tooltipElement.removeAttribute("title");
 
       let tooltip = new bootstrap.Tooltip(tooltipElement, { 
         trigger: 'manual', 
         html: true,
-        title: function(){
-          return tooltipElement.dataset.tooltipContent
-        }
+        title: htmlContent
       });
 
       // 鼠标移到 tooltipElement 上显示 tooltip
