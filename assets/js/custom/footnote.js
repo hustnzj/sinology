@@ -59,6 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
                   // 使用正则检测并替换 a 标签（因为，HTML 标准中，<li> 标签本身可以包含超链接 <a>，但如果浏览器或某些渲染环境存在限制（尤其是在 Bootstrap Tooltip 这种组件中），会导致嵌套的 <a> 标签被转义，显示为纯文本。）
                   meaning = meaning.replace(/&lt;a(.*?)&gt;/g, "<a$1 target='_blank'>");
                   meaning = meaning.replace(/&lt;\/a&gt;/g, "</a>");
+                  meaning = meaning.replace(/&lt;span(.*?)&gt;/g, "<span$1>");
+                  meaning = meaning.replace(/&lt;\/span&gt;/g, "</span>");
+                  
                   return `<li>${meaning}</li>`;
                 }).join('')}
               </ul>

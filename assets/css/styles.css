@@ -12614,4 +12614,15 @@ details .content {
   opacity: 1 !important;
 }
 
+.ef {
+  font-size: 16px;
+  line-height: 20px;
+  color: #AE6C48;
+  font-family: "Times New Roman";
+  padding-left: 10px;
+  /*! overflow:hidden; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /*# sourceMappingURL=styles.css.map */
