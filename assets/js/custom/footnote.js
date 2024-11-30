@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // 图标字典，用于映射 dict_names 到图标
       const dictIconMapping = {
-        'zdic': '📖', // 可替换为真实的图标路径
-        'baidu_hanyu': '🔍',
-        'moe': '📚'
+        'zdic': 'ZD', // 可替换为真实的图标路径
+        'baidu_hanyu': 'BH',
+        'moe': 'MO'
       };
 
       // 构建 HTML 结构
