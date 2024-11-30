@@ -12624,4 +12624,41 @@ details .content {
   white-space: nowrap;
 }
 
+#definitionModal .modal-body {
+  word-wrap: break-word;
+  max-height: 600px;
+  overflow-y: auto;
+}
+#definitionModal .modal-body .dict-header {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  display: flex;
+  border-bottom: 1px dashed;
+}
+#definitionModal .modal-body .dict-header .dict-name {
+  margin-right: 1rem;
+}
+#definitionModal .modal-body .dict-header .zdic-icon {
+  color: #AF0101;
+}
+#definitionModal .modal-body .dict-header .baidu-icon {
+  color: #3388FF;
+}
+#definitionModal .modal-body .dict-header .moe-icon {
+  color: #B45E14;
+}
+#definitionModal .modal-body .wordTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 1px solid red; /* 这里设置了一个1像素宽的黑色实线边框作为下划线，你可以根据需要修改颜色、宽度等样式 */
+  margin-bottom: 1rem;
+}
+#definitionModal .modal-body .explanations {
+  margin-left: 1rem;
+}
+#definitionModal .modal-body .meaning-list {
+  list-style-type: disc;
+}
+
 /*# sourceMappingURL=styles.css.map */

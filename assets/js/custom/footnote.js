@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('click', function (e) {
       // 获取 tooltip 的 DOM 节点
       const tooltipNode = document.querySelector('.tooltip.show'); // `.tooltip.show` 
-      if (!tooltipElement.contains(e.target) && !tooltipNode.contains(e.target) && activeTooltip) {
+      if (!tooltipElement.contains(e.target) && tooltipNode && !tooltipNode.contains(e.target) && activeTooltip) {
         activeTooltip.hide();
         activeTooltip = null; // 清空激活的tooltip
       }
