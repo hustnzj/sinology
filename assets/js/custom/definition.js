@@ -1,4 +1,6 @@
 let isButtonActive = false; // 状态变量：标记是否已有活动按钮
+let activeButton = null; // 存储当前活动按钮的引用
+let modalCount = 0; // 记录当前模态框数量，用于动态定位
 
 document.addEventListener('mouseup', function (event) {
     var selection = window.getSelection();
@@ -20,19 +22,32 @@ document.addEventListener('mouseup', function (event) {
 
         // 设置按钮位置
         button.style.position = 'absolute';
-        button.style.left = `${window.pageXOffset + event.pageX}px`;
-        button.style.top = `${window.pageYOffset + event.pageY}px`;
+        button.style.left = `${event.pageX}px`;
+        button.style.top = `${event.pageY}px`;
 
         console.log('Button position:', button.style.left, button.style.top);
 
         // 清除已有按钮，防止重复创建
-        var existingButton = $('.btn-primary');
-        if (existingButton) {
-            existingButton.remove();
+        if (activeButton) {
+            activeButton.remove();
         }
 
+        // 添加按钮到页面
+        document.body.appendChild(button);
+        console.log('Button added to DOM.');
+
+        // 设置状态为“按钮激活”
+        isButtonActive = true;
+        activeButton = button;
+
+        // 延迟绑定全局 click 事件，避免鼠标释放触发误移除
+        setTimeout(() => {
+            document.addEventListener('click', handleClickOutsideButton);
+        }, 0);
+
         // 绑定事件
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation(); // 阻止事件冒泡到全局 click 事件
             console.log('Button clicked. Selected text:', selectedText);
             const modalBody = $('#definitionModal .modal-body');
 
@@ -64,7 +79,15 @@ document.addEventListener('mouseup', function (event) {
                         htmlContent = generateContentHTML(data);
                         console.log(htmlContent)
                     } else {
-                        htmlContent = '<p>未找到释义。</p>';
+                        if (data.error) {
+                            if (data.play_sound) {
+                                // 使用 Web Speech API 播放声音
+                                const utterance = new SpeechSynthesisUtterance(data.error);
+                                utterance.lang = 'zh-CN';
+                                window.speechSynthesis.speak(utterance);
+                            }
+                        }
+                        htmlContent = `<p>${data.error}</p>`;
                     }
 
                     // 插入到模态框中
@@ -82,19 +105,35 @@ document.addEventListener('mouseup', function (event) {
             // 清除按钮并重置状态
             button.remove();
             isButtonActive = false;
+            activeButton = null;
+            document.removeEventListener('click', handleClickOutsideButton);
         });
 
-        // 添加按钮到页面
-        document.body.appendChild(button);
-        console.log('Button added to DOM.');
+        
 
-        // 设置状态为“按钮激活”
-        isButtonActive = true;
+        
     } else {
         // 如果未选中文本，重置状态
         isButtonActive = false;
+        if (activeButton) {
+            activeButton.remove();
+            activeButton = null;
+            document.removeEventListener('click', handleClickOutsideButton);
+        }
     }
 });
+
+// 全局 click 事件监听函数
+function handleClickOutsideButton(event) {
+  // 如果有活动按钮，且点击的不是按钮本身，则移除按钮
+  if (isButtonActive && activeButton && !activeButton.contains(event.target)) {
+      console.log('Click detected outside button. Removing button.');
+      activeButton.remove();
+      isButtonActive = false;
+      activeButton = null;
+      document.removeEventListener('click', handleClickOutsideButton);
+  }
+}
 
 // 生成内容的 HTML
 function generateContentHTML(dataObj) {

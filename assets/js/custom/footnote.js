@@ -9,68 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var targetElement = document.querySelector(escapedId);
     if (targetElement) {
       // 获取并解析 JSON 数据
-      let rawContent = targetElement.innerHTML.replace("↩", "").trim();
-      rawContent = rawContent.replace(/&nbsp;<a.*<\/a>/, "").replace(/<p>|<\/p>/g, '').replace(/<code>|<\/code>/g, ''); // 去除末尾链接部分
-      let dataObj = JSON.parse(rawContent);
-
-      // 标题
-      const title = dataObj.wd || "词条";
-
-      // 图标字典，用于映射 dict_names 到图标
-      const dictIconMapping = {
-        'zdic': 'ZD', // 可替换为真实的图标路径
-        'baidu_hanyu': 'BH',
-        'moe': 'MO'
-      };
-
-      // 构建 HTML 结构
-      let htmlContent = `<div class="text-center wordTitle">${title}</div>`;
-
-      // 遍历 sources 数据
-      dataObj.sources.forEach(source => {
-        const dictName = source.dict_name;
-        const spiderUrls = source.spider_url || [];
-        const explanationsData = source.data || {};
-
-        // 添加字典标题和图标
-        const icon = dictIconMapping[dictName] || '📚';
-        
-        // 添加字典的链接
-        htmlContent += `<div class="dict-icons"><span>来源：</span>`;
-        spiderUrls.forEach((url) => {
-          // 添加链接和图标
-          htmlContent += `
-            <a href="${url}" target="_blank" class="dict-icon" title="${dictName || '其他'}">
-              <span class="icon">${icon}</span>
-            </a>
-          `;
-        });
-        htmlContent += `</div>`;
-
-        // 解释展示
-        htmlContent += `<div class="explanations">`;
-        Object.keys(explanationsData).forEach(pinyin => {
-          const meanings = explanationsData[pinyin];
-          htmlContent += `
-            <div class="pinyin-section">
-              <div class="pinyin-title">[${pinyin}]</div>
-              <ul class="meaning-list">
-                ${meanings.map(meaning => {
-                  // 使用正则检测并替换 a 标签（因为，HTML 标准中，<li> 标签本身可以包含超链接 <a>，但如果浏览器或某些渲染环境存在限制（尤其是在 Bootstrap Tooltip 这种组件中），会导致嵌套的 <a> 标签被转义，显示为纯文本。）
-                  meaning = meaning.replace(/&lt;a(.*?)&gt;/g, "<a$1 target='_blank'>");
-                  meaning = meaning.replace(/&lt;\/a&gt;/g, "</a>");
-                  meaning = meaning.replace(/&lt;span(.*?)&gt;/g, "<span$1>");
-                  meaning = meaning.replace(/&lt;\/span&gt;/g, "</span>");
-                  
-                  return `<li>${meaning}</li>`;
-                }).join('')}
-              </ul>
-            </div>
-          `;
-        });
-        htmlContent += `</div>`; // 结束字典解释部分
-      });
-
+      let htmlContent = targetElement.innerHTML.replace("↩", "").trim();
+      
       let tooltip = new bootstrap.Tooltip(tooltipElement, { 
         trigger: 'manual', 
         html: true,
