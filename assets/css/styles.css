@@ -12624,41 +12624,54 @@ details .content {
   white-space: nowrap;
 }
 
-#definitionModal .modal-body {
+[id^=definitionModal] .modal-dialog {
+  margin: 0;
+}
+[id^=definitionModal] .modal-dialog .modal-header {
+  cursor: grab; /* 默认情况下显示手型 */
+}
+[id^=definitionModal] .modal-dialog .modal-header:active {
+  cursor: grabbing; /* 拖动时显示抓取状态 */
+}
+[id^=definitionModal] .modal-dialog .modal-body {
   word-wrap: break-word;
   max-height: 600px;
   overflow-y: auto;
 }
-#definitionModal .modal-body .dict-header {
+[id^=definitionModal] .modal-dialog .modal-body .dict-header {
   font-size: 1.2rem;
   margin-top: 1rem;
   font-weight: bold;
   display: flex;
   border-bottom: 1px dashed;
 }
-#definitionModal .modal-body .dict-header .dict-name {
+[id^=definitionModal] .modal-dialog .modal-body .dict-header .dict-name {
   margin-right: 1rem;
 }
-#definitionModal .modal-body .dict-header .zdic-icon {
+[id^=definitionModal] .modal-dialog .modal-body .dict-header .zdic-icon {
   color: #AF0101;
 }
-#definitionModal .modal-body .dict-header .baidu-icon {
+[id^=definitionModal] .modal-dialog .modal-body .dict-header .baidu-icon {
   color: #3388FF;
 }
-#definitionModal .modal-body .dict-header .moe-icon {
+[id^=definitionModal] .modal-dialog .modal-body .dict-header .moe-icon {
   color: #B45E14;
 }
-#definitionModal .modal-body .wordTitle {
+[id^=definitionModal] .modal-dialog .modal-body .wordTitle {
   font-size: 2rem;
   font-weight: bold;
   border-bottom: 1px solid red; /* 这里设置了一个1像素宽的黑色实线边框作为下划线，你可以根据需要修改颜色、宽度等样式 */
   margin-bottom: 1rem;
 }
-#definitionModal .modal-body .explanations {
+[id^=definitionModal] .modal-dialog .modal-body .explanations {
   margin-left: 1rem;
 }
-#definitionModal .modal-body .meaning-list {
+[id^=definitionModal] .modal-dialog .modal-body .meaning-list {
   list-style-type: disc;
+}
+
+.modal-backdrop {
+  pointer-events: auto; /* 确保点击能触发事件 */
 }
 
 /*# sourceMappingURL=styles.css.map */
