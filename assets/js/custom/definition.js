@@ -238,8 +238,8 @@ function createAndShowModal(modalId, selectedText, event) {
 
   // **添加自动关闭逻辑**
   setTimeout(() => {
-    closeModal(); // 1分钟后自动关闭模态框
-  }, 60 * 1000); // 1 分钟
+    closeModal(); 
+  }, 60 * 10000); // 6分钟后自动关闭模态框
 }
 
 
