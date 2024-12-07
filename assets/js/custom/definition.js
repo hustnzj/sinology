@@ -86,6 +86,8 @@ function handleClickOutsideButton(event) {
 
 // 创建并显示模态框
 function createAndShowModal(modalId, selectedText, event) {
+  let isLoading = true; // 标志变量：模态框是否处于加载状态
+
   const modal = document.createElement('div');
   modal.id = modalId;
   modal.classList.add('modal', 'fade');
@@ -109,6 +111,9 @@ function createAndShowModal(modalId, selectedText, event) {
                       <p>正在查询，请稍候...</p>
                   </div>
               </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-close-footer">关闭</button>
+            </div>
           </div>
       </div>
   `;
@@ -118,21 +123,16 @@ function createAndShowModal(modalId, selectedText, event) {
   dialog.style.width = '400px';
   modal.style.position = 'fixed';
   modal.style.width = '400px';
-  modal.style.height = '212px'; // 这个是 dialog.offsetHeight 得到的，是加载内容前的高度。
-
-  // 延迟获取dialog的宽度、并设置位置（因为在你尝试获取宽高度时，如果 dialog 的内容尚未完全加载（比如样式或内容未渲染），高度可能为 0）
+  modal.style.height = '283px'; // 这个是 dialog.offsetHeight 得到的，是加载内容前的高度，之所以要设置这么精确，是为了避免多出来的高度挡住 backdrop，影响到 backdrop 绑定的点击隐藏模态框的事件。
+  
+  // 延迟获取dialog的宽度、并设置位置（因为在尝试获取宽高度时，如果 dialog 的内容尚未完全加载（比如样式或内容未渲染），高度可能为 0）
   setTimeout(() => {
     const dialogWidth = dialog.offsetWidth; // 或 dialog.getBoundingClientRect().height
-    // console.log(dialogWidth);
-    // console.log(dialog.offsetHeight);
-
-    // 根据高度调整模态框的位置
-    // modal.style.left = `calc(50% - ${dialogWidth / 2}px + ${modalCount * 20}px)`;
-    // modal.style.top = `calc(10% + ${modalCount * 20}px)`;
-
+    // console.log(dialog.offsetHeight); //勿删！勿删！勿删！勿删！勿删！勿删！勿删！勿删！勿删！用来确定 dialog 初始高度!
     modal.style.left = `calc(50% - ${dialogWidth / 2}px)`;
     modal.style.top = `calc(10%)`;
   }, 0);
+  document.body.appendChild(modal);
   
   // 动态设置 modal 的高度
   const updateModalHeight = () => {
@@ -147,7 +147,6 @@ function createAndShowModal(modalId, selectedText, event) {
       updateModalHeight();
   }).observe(modalBody, { childList: true, subtree: true });
 
-  document.body.appendChild(modal);
 
   // 添加背景遮罩
   const backdrop = document.createElement('div');
@@ -174,6 +173,7 @@ function createAndShowModal(modalId, selectedText, event) {
 
   // 隐藏逻辑
   const hideModal = () => {
+    if (isLoading) {
       modal.classList.remove('show');
       modal.style.opacity = 0;
       backdrop.style.opacity = 0;
@@ -181,6 +181,7 @@ function createAndShowModal(modalId, selectedText, event) {
           modal.style.display = 'none';
           backdrop.style.display = 'none';
       }, 300); // 等待动画结束
+    }
   };
 
   // 重新显示逻辑
@@ -195,6 +196,7 @@ function createAndShowModal(modalId, selectedText, event) {
   };
 
   modal.querySelector('.btn-close').addEventListener('click', closeModal);
+  modal.querySelector('.btn-close-footer').addEventListener('click', closeModal);
   backdrop.addEventListener('click', hideModal); // 点击遮罩时仅隐藏模态框
 
   // 模态框内容加载逻辑
@@ -222,10 +224,12 @@ function createAndShowModal(modalId, selectedText, event) {
           }
 
           modalBody.innerHTML = htmlContent;
+          isLoading = false; // 数据加载完成，设置为 false
       })
       .catch(error => {
           console.error('Fetch error:', error);
           modal.querySelector('.modal-body').innerHTML = '<p>请求失败，请稍后再试。</p>';
+          isLoading = false; // 即使加载失败也设置为 false
       });
 
   modalCount++; // 递增模态框计数器
