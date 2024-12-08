@@ -133,6 +133,13 @@ function createAndShowModal(modalId, selectedText, event) {
     modal.style.top = `calc(10%)`;
   }, 0);
   document.body.appendChild(modal);
+
+  // 添加事件监听：按住 cmd 键关闭模态框
+  dialog.addEventListener('click', (e) => {
+    if (e.altKey) { // 检测 option 或 alt 键
+      closeModal();
+    }
+  });
   
   // 动态设置 modal 的高度
   const updateModalHeight = () => {
@@ -200,18 +207,72 @@ function createAndShowModal(modalId, selectedText, event) {
   backdrop.addEventListener('click', hideModal); // 点击遮罩时仅隐藏模态框
 
   // 模态框内容加载逻辑
-  fetch(`http://127.0.0.1:5001/get_definition?word=${encodeURIComponent(selectedText)}`)
+  fetch(`http://192.168.31.21:5001/get_definition?word=${encodeURIComponent(selectedText)}`)
       .then(response => {
           console.log(`'${selectedText}' Fetch response status:`, response.status);
           return response.json();
       })
       .then(data => {
           const modalBody = modal.querySelector('.modal-body');
+          const modalFooter = modal.querySelector('.modal-footer');
           let htmlContent = '';
 
           if (data && data.sources) {
               htmlContent = generateContentHTML(data);
               showModal(); // 在内容加载完成后重新显示模态框
+              // 动态添加“重新查询”按钮
+              if (!modalFooter.querySelector('.btn-retry')) {
+                  const retryButton = document.createElement('button');
+                  retryButton.className = 'btn btn-primary btn-retry me-auto'; // 添加样式
+                  retryButton.textContent = '重新查询';
+                  retryButton.addEventListener('click', () => {
+                      // 禁用按钮
+                      retryButton.disabled = true;
+                      // 重新查询逻辑
+                      modalBody.innerHTML = `
+                          <div class="text-center my-4">
+                              <div class="spinner-border text-primary" role="status">
+                                  <span class="sr-only">Loading...</span>
+                              </div>
+                              <p>正在重新查询，请稍候...</p>
+                          </div>
+                      `; // 显示加载状态
+                      isLoading = true; // 设置为加载状态
+
+                      // 重新发起 fetch 请求
+                      fetch(`http://192.168.31.21:5001/get_definition?word=${encodeURIComponent(selectedText)}&update=1`)
+                          .then(response => {
+                              console.log(`'${selectedText}' Fetch response status:`, response.status);
+                              return response.json();
+                          })
+                          .then(data => {
+                              if (data && data.sources) {
+                                  modalBody.innerHTML = generateContentHTML(data);
+                                  showModal(); // 在内容加载完成后重新显示模态框
+                              } else {
+                                  if (data.error) {
+                                      if (data.play_sound) {
+                                          const utterance = new SpeechSynthesisUtterance(data.error);
+                                          utterance.lang = 'zh-CN';
+                                          window.speechSynthesis.speak(utterance);
+                                      }
+                                  }
+                                  htmlContent = `<p>${data.error}</p>`;
+                                  modalBody.innerHTML = htmlContent;
+                              }
+                              retryButton.disabled = false; // 查询完成，启用按钮
+                              isLoading = false; // 数据加载完成，设置为 false
+                          })
+                          .catch(error => {
+                              console.error('Fetch error during retry:', error);
+                              modalBody.innerHTML = '<p>重新查询失败，请稍后再试。</p>';
+                              retryButton.disabled = false; // 查询失败，启用按钮
+                              isLoading = false; // 设置为加载完成
+                          });
+                  });
+
+                  modalFooter.insertBefore(retryButton, modalFooter.firstChild); // 插入按钮到模态框底部
+              }
           } else {
               if (data.error) {
                   if (data.play_sound) {
