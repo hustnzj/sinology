@@ -210,6 +210,7 @@ function createAndShowModal(modalId, selectedText, event) {
   fetch(`http://192.168.31.21:5001/get_definition?word=${encodeURIComponent(selectedText)}`)
       .then(response => {
           console.log(`'${selectedText}' Fetch response status:`, response.status);
+          console.log(response.json());
           return response.json();
       })
       .then(data => {
@@ -363,7 +364,8 @@ function generateContentHTML(dataObj) {
   const dictIconMapping = {
     'zdic': '<i class="fa fa-book zdic-icon" aria-hidden="true"></i>',
     'baidu_hanyu': '<i class="fa fa-book baidu-icon" aria-hidden="true"></i>',
-    'moe': '<i class="fa fa-book moe-icon" aria-hidden="true"></i>'
+    'moe': '<i class="fa fa-book moe-icon" aria-hidden="true"></i>',
+    'baidu_baike': '<i class="fa fa-book baidu-icon" aria-hidden="true"></i>',
   };
 
   let htmlContent = `<div class="text-center wordTitle">${title}</div>`;

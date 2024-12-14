@@ -15,6 +15,7 @@ setup(
                 '_py.batch_rename_png',
                 '_py.git_auto_commit',
                 '_py.git_diff',
+                '_py.update_ebook_assets',  # 新模块
                 ],
     entry_points={
         'console_scripts': [
@@ -27,6 +28,7 @@ setup(
             'rename_png = _py.batch_rename_png:main',
             'git_diff = _py.git_diff:main',
             'git_auto_commit = _py.git_auto_commit:main',
+            'update_ebook_assets = _py.update_ebook_assets:main',  # 新命令
         ],
     },
     install_requires=[
