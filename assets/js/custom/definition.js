@@ -24,6 +24,7 @@ document.addEventListener('mouseup', function (event) {
         button.style.position = 'absolute';
         button.style.left = `${event.pageX}px`;
         button.style.top = `${event.pageY}px`;
+        button.style.zIndex = 100;
 
         // console.log('Button position:', button.style.left, button.style.top);
 
@@ -210,7 +211,6 @@ function createAndShowModal(modalId, selectedText, event) {
   fetch(`http://192.168.31.21:5001/get_definition?word=${encodeURIComponent(selectedText)}`)
       .then(response => {
           console.log(`'${selectedText}' Fetch response status:`, response.status);
-          console.log(response.json());
           return response.json();
       })
       .then(data => {

@@ -1,0 +1,167 @@
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools>=64
+  - wheel
+* Getting build dependencies for sdist...
+running egg_info
+writing _py/note_system_python_tools.egg-info/PKG-INFO
+writing dependency_links to _py/note_system_python_tools.egg-info/dependency_links.txt
+writing entry points to _py/note_system_python_tools.egg-info/entry_points.txt
+writing requirements to _py/note_system_python_tools.egg-info/requires.txt
+writing top-level names to _py/note_system_python_tools.egg-info/top_level.txt
+reading manifest file '_py/note_system_python_tools.egg-info/SOURCES.txt'
+writing manifest file '_py/note_system_python_tools.egg-info/SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing _py/note_system_python_tools.egg-info/PKG-INFO
+writing dependency_links to _py/note_system_python_tools.egg-info/dependency_links.txt
+writing entry points to _py/note_system_python_tools.egg-info/entry_points.txt
+writing requirements to _py/note_system_python_tools.egg-info/requires.txt
+writing top-level names to _py/note_system_python_tools.egg-info/top_level.txt
+reading manifest file '_py/note_system_python_tools.egg-info/SOURCES.txt'
+writing manifest file '_py/note_system_python_tools.egg-info/SOURCES.txt'
+running check
+creating note_system_python_tools-1.5.0
+creating note_system_python_tools-1.5.0/_py/note_system_python_tools.egg-info
+creating note_system_python_tools-1.5.0/_py/不成熟
+creating note_system_python_tools-1.5.0/_py/备用方案
+creating note_system_python_tools-1.5.0/_py/弃用
+creating note_system_python_tools-1.5.0/assets/js
+creating note_system_python_tools-1.5.0/assets/js/custom
+copying files to note_system_python_tools-1.5.0...
+copying pyproject.toml -> note_system_python_tools-1.5.0
+copying setup.py -> note_system_python_tools-1.5.0
+copying _py/note_system_python_tools.egg-info/PKG-INFO -> note_system_python_tools-1.5.0/_py/note_system_python_tools.egg-info
+copying _py/note_system_python_tools.egg-info/SOURCES.txt -> note_system_python_tools-1.5.0/_py/note_system_python_tools.egg-info
+copying _py/note_system_python_tools.egg-info/dependency_links.txt -> note_system_python_tools-1.5.0/_py/note_system_python_tools.egg-info
+copying _py/note_system_python_tools.egg-info/entry_points.txt -> note_system_python_tools-1.5.0/_py/note_system_python_tools.egg-info
+copying _py/note_system_python_tools.egg-info/requires.txt -> note_system_python_tools-1.5.0/_py/note_system_python_tools.egg-info
+copying _py/note_system_python_tools.egg-info/top_level.txt -> note_system_python_tools-1.5.0/_py/note_system_python_tools.egg-info
+copying _py/不成熟/get_ts_videos.py -> note_system_python_tools-1.5.0/_py/不成熟
+copying _py/不成熟/moe_tw_pyppeteer_original.py -> note_system_python_tools-1.5.0/_py/不成熟
+copying _py/不成熟/moe_tw_pyppeteer_不能处理多音字.py -> note_system_python_tools-1.5.0/_py/不成熟
+copying _py/不成熟/remove_watermark.py -> note_system_python_tools-1.5.0/_py/不成熟
+copying _py/备用方案/baidu_hanyu_cookie_request.py -> note_system_python_tools-1.5.0/_py/备用方案
+copying _py/备用方案/baidu_hanyu_selenium.py -> note_system_python_tools-1.5.0/_py/备用方案
+copying _py/备用方案/convert_footnotes_ask.py -> note_system_python_tools-1.5.0/_py/备用方案
+copying _py/备用方案/convert_footnotes_auto.py -> note_system_python_tools-1.5.0/_py/备用方案
+copying _py/备用方案/moe_tw.py -> note_system_python_tools-1.5.0/_py/备用方案
+copying _py/弃用/baidu_baike_pyppeteer.py -> note_system_python_tools-1.5.0/_py/弃用
+copying _py/弃用/baidu_hanyu_pyppeteer.py -> note_system_python_tools-1.5.0/_py/弃用
+copying _py/弃用/moe_tw_pyppeteer.py -> note_system_python_tools-1.5.0/_py/弃用
+copying _py/弃用/poetry_all_zhuyin.py -> note_system_python_tools-1.5.0/_py/弃用
+copying _py/弃用/toc_chapters_pinyin_hyphen_bak.py -> note_system_python_tools-1.5.0/_py/弃用
+copying _py/弃用/zdic_pyppeteer.py -> note_system_python_tools-1.5.0/_py/弃用
+copying assets/js/bootstrap.bundle.min.js -> note_system_python_tools-1.5.0/assets/js
+copying assets/js/bootstrap.min.js -> note_system_python_tools-1.5.0/assets/js
+copying assets/js/jquery-3.7.1.slim.min.js -> note_system_python_tools-1.5.0/assets/js
+copying assets/js/custom/definition.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/details.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/explanationLink.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/footnote.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/img-col.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/poetry.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/prepare-html.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/span-to-para.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/table.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/theme-toggle.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/toc.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying assets/js/custom/wavyLines.js -> note_system_python_tools-1.5.0/assets/js/custom
+copying _py/note_system_python_tools.egg-info/SOURCES.txt -> note_system_python_tools-1.5.0/_py/note_system_python_tools.egg-info
+Writing note_system_python_tools-1.5.0/setup.cfg
+Creating tar archive
+removing 'note_system_python_tools-1.5.0' (and everything under it)
+* Building wheel from sdist
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools>=64
+  - wheel
+* Getting build dependencies for wheel...
+running egg_info
+writing _py/note_system_python_tools.egg-info/PKG-INFO
+writing dependency_links to _py/note_system_python_tools.egg-info/dependency_links.txt
+writing entry points to _py/note_system_python_tools.egg-info/entry_points.txt
+writing requirements to _py/note_system_python_tools.egg-info/requires.txt
+writing top-level names to _py/note_system_python_tools.egg-info/top_level.txt
+reading manifest file '_py/note_system_python_tools.egg-info/SOURCES.txt'
+writing manifest file '_py/note_system_python_tools.egg-info/SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/弃用
+copying _py/弃用/moe_tw_pyppeteer.py -> build/lib/弃用
+copying _py/弃用/baidu_hanyu_pyppeteer.py -> build/lib/弃用
+copying _py/弃用/toc_chapters_pinyin_hyphen_bak.py -> build/lib/弃用
+copying _py/弃用/zdic_pyppeteer.py -> build/lib/弃用
+copying _py/弃用/poetry_all_zhuyin.py -> build/lib/弃用
+copying _py/弃用/baidu_baike_pyppeteer.py -> build/lib/弃用
+creating build/lib/不成熟
+copying _py/不成熟/moe_tw_pyppeteer_不能处理多音字.py -> build/lib/不成熟
+copying _py/不成熟/remove_watermark.py -> build/lib/不成熟
+copying _py/不成熟/get_ts_videos.py -> build/lib/不成熟
+copying _py/不成熟/moe_tw_pyppeteer_original.py -> build/lib/不成熟
+creating build/lib/备用方案
+copying _py/备用方案/baidu_hanyu_selenium.py -> build/lib/备用方案
+copying _py/备用方案/convert_footnotes_auto.py -> build/lib/备用方案
+copying _py/备用方案/moe_tw.py -> build/lib/备用方案
+copying _py/备用方案/convert_footnotes_ask.py -> build/lib/备用方案
+copying _py/备用方案/baidu_hanyu_cookie_request.py -> build/lib/备用方案
+running egg_info
+writing _py/note_system_python_tools.egg-info/PKG-INFO
+writing dependency_links to _py/note_system_python_tools.egg-info/dependency_links.txt
+writing entry points to _py/note_system_python_tools.egg-info/entry_points.txt
+writing requirements to _py/note_system_python_tools.egg-info/requires.txt
+writing top-level names to _py/note_system_python_tools.egg-info/top_level.txt
+reading manifest file '_py/note_system_python_tools.egg-info/SOURCES.txt'
+writing manifest file '_py/note_system_python_tools.egg-info/SOURCES.txt'
+installing to build/bdist.macosx-12.1-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.macosx-12.1-x86_64/wheel
+creating build/bdist.macosx-12.1-x86_64/wheel/弃用
+copying build/lib/弃用/moe_tw_pyppeteer.py -> build/bdist.macosx-12.1-x86_64/wheel/./弃用
+copying build/lib/弃用/baidu_hanyu_pyppeteer.py -> build/bdist.macosx-12.1-x86_64/wheel/./弃用
+copying build/lib/弃用/toc_chapters_pinyin_hyphen_bak.py -> build/bdist.macosx-12.1-x86_64/wheel/./弃用
+copying build/lib/弃用/zdic_pyppeteer.py -> build/bdist.macosx-12.1-x86_64/wheel/./弃用
+copying build/lib/弃用/poetry_all_zhuyin.py -> build/bdist.macosx-12.1-x86_64/wheel/./弃用
+copying build/lib/弃用/baidu_baike_pyppeteer.py -> build/bdist.macosx-12.1-x86_64/wheel/./弃用
+creating build/bdist.macosx-12.1-x86_64/wheel/不成熟
+copying build/lib/不成熟/moe_tw_pyppeteer_不能处理多音字.py -> build/bdist.macosx-12.1-x86_64/wheel/./不成熟
+copying build/lib/不成熟/remove_watermark.py -> build/bdist.macosx-12.1-x86_64/wheel/./不成熟
+copying build/lib/不成熟/get_ts_videos.py -> build/bdist.macosx-12.1-x86_64/wheel/./不成熟
+copying build/lib/不成熟/moe_tw_pyppeteer_original.py -> build/bdist.macosx-12.1-x86_64/wheel/./不成熟
+creating build/bdist.macosx-12.1-x86_64/wheel/备用方案
+copying build/lib/备用方案/baidu_hanyu_selenium.py -> build/bdist.macosx-12.1-x86_64/wheel/./备用方案
+copying build/lib/备用方案/convert_footnotes_auto.py -> build/bdist.macosx-12.1-x86_64/wheel/./备用方案
+copying build/lib/备用方案/moe_tw.py -> build/bdist.macosx-12.1-x86_64/wheel/./备用方案
+copying build/lib/备用方案/convert_footnotes_ask.py -> build/bdist.macosx-12.1-x86_64/wheel/./备用方案
+copying build/lib/备用方案/baidu_hanyu_cookie_request.py -> build/bdist.macosx-12.1-x86_64/wheel/./备用方案
+running install_egg_info
+Copying _py/note_system_python_tools.egg-info to build/bdist.macosx-12.1-x86_64/wheel/./note_system_python_tools-1.5.0-py3.11.egg-info
+running install_scripts
+creating build/bdist.macosx-12.1-x86_64/wheel/note_system_python_tools-1.5.0.dist-info/WHEEL
+creating '/Volumes/t5-2021-e/active-study/github.com/hustnzj/sinology_learning/dist/.tmp-bq9okw2u/note_system_python_tools-1.5.0-py3-none-any.whl' and adding 'build/bdist.macosx-12.1-x86_64/wheel' to it
+adding '不成熟/get_ts_videos.py'
+adding '不成熟/moe_tw_pyppeteer_original.py'
+adding '不成熟/moe_tw_pyppeteer_不能处理多音字.py'
+adding '不成熟/remove_watermark.py'
+adding '备用方案/baidu_hanyu_cookie_request.py'
+adding '备用方案/baidu_hanyu_selenium.py'
+adding '备用方案/convert_footnotes_ask.py'
+adding '备用方案/convert_footnotes_auto.py'
+adding '备用方案/moe_tw.py'
+adding '弃用/baidu_baike_pyppeteer.py'
+adding '弃用/baidu_hanyu_pyppeteer.py'
+adding '弃用/moe_tw_pyppeteer.py'
+adding '弃用/poetry_all_zhuyin.py'
+adding '弃用/toc_chapters_pinyin_hyphen_bak.py'
+adding '弃用/zdic_pyppeteer.py'
+adding 'note_system_python_tools-1.5.0.dist-info/METADATA'
+adding 'note_system_python_tools-1.5.0.dist-info/WHEEL'
+adding 'note_system_python_tools-1.5.0.dist-info/entry_points.txt'
+adding 'note_system_python_tools-1.5.0.dist-info/top_level.txt'
+adding 'note_system_python_tools-1.5.0.dist-info/RECORD'
+removing build/bdist.macosx-12.1-x86_64/wheel
+Successfully built note_system_python_tools-1.5.0.tar.gz and note_system_python_tools-1.5.0-py3-none-any.whl
