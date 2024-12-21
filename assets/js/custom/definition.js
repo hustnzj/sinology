@@ -107,7 +107,7 @@ function createAndShowModal(modalId, selectedText, event) {
               <div class="modal-body">
                   <div class="text-center my-4">
                       <div class="spinner-border text-primary" role="status">
-                          <span class="sr-only">Loading...</span>
+                          <span class="visually-hidden">Loading...</span>
                       </div>
                       <p>正在查询，请稍候...</p>
                   </div>
@@ -233,7 +233,7 @@ function createAndShowModal(modalId, selectedText, event) {
                       modalBody.innerHTML = `
                           <div class="text-center my-4">
                               <div class="spinner-border text-primary" role="status">
-                                  <span class="sr-only">Loading...</span>
+                                  <span class="visually-hidden">Loading...</span>
                               </div>
                               <p>正在重新查询，请稍候...</p>
                           </div>
